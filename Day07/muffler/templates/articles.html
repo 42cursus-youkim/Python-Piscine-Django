@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %} {% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Synopsis</th>
+      <th>Author</th>
+      <th>Created</th>
+      <!-- <th>When</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    {% for line in articles %}
+    <tr>
+      {% for item in line %}
+      <td>{{item}}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %} {% comment %}
+<td class="num">{% else %}</td>
+<td>{% endif %} {{item}}</td>
+{% if forloop.counter == 2 %} {% endcomment %}

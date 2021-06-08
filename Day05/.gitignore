@@ -1,0 +1,16 @@
+.venv
+djangotraining
+sqltest
+
+ex??/migrations/
+migrations
+
+ex06/
+ex07/
+ex08/
+ex09/
+ex10/
+
+people.csv
+planets.csv
+opening_crawl.json

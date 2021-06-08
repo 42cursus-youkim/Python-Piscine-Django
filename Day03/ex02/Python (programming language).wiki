@@ -1,0 +1,730 @@
+
+
+
+{{Infobox programming language
+| logo = Python logo and wordmark.svg
+| logo size = 250px
+| paradigm = Multi-Multi-paradigm: object-object-oriented,<ref></ref> procedural (imperative), functional, structured, reflective
+| released = <ref name=guttag />
+| designer = Guido van Rossum 
+| developer = Python Software Foundation
+| latest release version = 
+| latest release date = 
+| latest preview version = 
+| latest preview date = 
+| typing = Duck, dynamic, strong typing;<ref></ref>
+| implementations = CPython, PyPy, Stackless Python, MicroPython, CircuitPython, IronPython, Jython
+| dialects = Cython, RPython, Starlark<ref></ref>
+| influenced = Apache Groovy, Boo, Cobra, CoffeeScript,<ref></ref> D, F#, Genie,<ref>{{cite web
+url=https://wiki.gnome.org/action/show/Projects/Genie
+title=The Genie Programming Language Tutorial
+access-date=28 February 2020}}</ref> Go, JavaScript,<ref>{{cite web
+|title=Perl and Python influences in JavaScript
+date=24 February 2013
+|website=www.2ality.com
+url=http://www.2ality.com/2013/02/javascript-influences.html
+access-date=15 May 2015}}</ref><ref>{{cite web
+|title=Chapter 3: The Nature of JavaScript; Influences
+last=Rauschmayer
+first=Axel
+|website=O'Reilly, Speaking JavaScript
+url=http://speakingjs.com/es5/ch03.html
+access-date=15 May 2015}}</ref> Julia,<ref name=Julia/> Nim, Ring,<ref name="The Ring programming language and other languages"></ref>
+| license = Python Software Foundation License
+| website = 
+| wikibooks = Python Programming
+| influenced_by = ABC,<ref name="faq-created"/> Ada,<ref></ref> C,<ref name="AutoNT-1"/> C++,<ref name="classmix"/> CLU,<ref name="effbot-call-by-object"/> Dylan,<ref name="AutoNT-2"/> Haskell,<ref name="AutoNT-3"/> Icon,<ref name="AutoNT-4"/> Java,<ref name="AutoNT-5"/> Lisp,<ref name="AutoNT-6"/> Modula-3,<ref name="classmix" /> Perl, Standard ML<ref name="python.org"/>
+| operating system = Windows, Linux/UNIX, macOS and more<ref></ref>
+| file ext = .py, .pyi, .pyc, .pyd, .pyo (prior to 3.5),<ref>File extension .pyo was removed in Python 3.5. See [https://www.python.org/dev/peps/pep-0488/ PEP 0488]</ref> </ref>
+}}
+
+Python is an interpreted high-high-level general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of Off-significant indentation. Its language constructs as well as its object-object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.<ref name="AutoNT-7" />
+
+Python is dynamically-typed and garbage-collected. It supports multiple programming paradigms, including structured (particularly, procedural), object-object-oriented and functional programming. Python is often described as a "batteries included" language due to its comprehensive standard library.<ref name="About" />
+
+Guido van Rossum began working on Python in the late 1980s, as a successor to the ABC programming language, and first released it in 1991 as Python 0.9.0.<ref></ref> 
+
+Python consistently ranks as one of the most popular programming languages.<ref></ref>
+
+History
+
+
+
+Python was conceived in the late 1980s<ref name="venners-interview-pt-1" /> by Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands as a successor to  ABC programming language, which was inspired by SETL,<ref name="AutoNT-12" /> capable of exception handling and interfacing with the Amoeba operating system.<ref name="faq-created" /> Its implementation began in December 1989.<ref name="timeline-of-python" /> Van Rossum shouldered sole responsibility for the project, as the lead developer, until 12 July 2018, when he announced his "permanent vacation" from his responsibilities as Python's Benevolent Dictator For Life, a title the Python community bestowed upon him to reflect his long-term commitment as the project's chief decision-maker.<ref name="lj-bdfl-resignation" /> In January 2019, active Python core developers elected a 5-member "Steering Council" to lead the project.<ref></ref>
+
+Python&nbsp;2.0 was released on 16 October 2000, with many major new features, including a cycle-detecting garbage collector and support for Unicode.<ref name="newin-2.0" />
+
+Python&nbsp;3.0 was released on 3 December 2008. It was a major revision of the language that is not completely backward-compatible.<ref name="3.0-release" /> Many of its major features were backported to Python&nbsp;2.6.x<ref name="pep-3000" /> and 2.7.x version series.  Releases of Python&nbsp;3 include the <code>2to3</code> utility, which automates (at least partially) the translation of Python&nbsp;2 code to Python&nbsp;3.<ref></ref>
+
+Python&nbsp;2.7's end-of-end-of-life date was initially set at 2015 then postponed to 2020 out of concern that a large body of existing code could not easily be forward-ported to Python&nbsp;3.<ref></ref> and later are supported.
+
+Python&nbsp;3.9.2 and 3.8.8 were expedited<ref></ref>
+
+Design philosophy and features
+Python is a multi-paradigm programming language. Object-oriented programming and structured programming are fully supported, and many of its features support functional programming and aspect-oriented programming (including by metaprogramming<ref name="AutoNT-13" /> and metaobjects (magic methods)).<ref name="AutoNT-14" /> Many other paradigms are supported via extensions, including design by contract<ref name="AutoNT-15" /><ref name="AutoNT-16" /> and logic programming.<ref name="AutoNT-17" />
+
+Python uses dynamic typing and a combination of reference counting and a cycle-detecting garbage collector for memory management.<ref name="Reference_counting"></ref> It also features dynamic name resolution (late binding), which binds method and variable names during program execution.
+
+Python's design offers some support for functional programming in the Lisp tradition. It has  functions; list comprehensions, dictionaries, sets, and generator expressions.<ref name="AutoNT-59"/> The standard library has two modules (itertools and functools) that implement functional tools borrowed from Haskell and Standard ML.<ref name="AutoNT-18" />
+
+The language's core philosophy is summarized in the document The Zen of Python (PEP 20), which includes aphorisms such as:<ref name="PEP20" />
+
+* Beautiful is better than ugly.
+* Explicit is better than implicit.
+* Simple is better than complex.
+* Complex is better than complicated.
+* Readability counts.
+
+Rather than having all of its functionality built into its core, Python was designed to be highly extensible (with modules). This compact modularity has made it particularly popular as a means of adding programmable interfaces to existing applications. Van Rossum's vision of a small core language with a large standard library and easily extensible interpreter stemmed from his frustrations with ABC, which espoused the opposite approach.<ref name="venners-interview-pt-1" />
+
+Python strives for a simpler, less-cluttered syntax and grammar while giving developers a choice in their coding methodology. In contrast to Perl's "there is more than one way to do it" motto, Python embraces a "there should be one— and preferably only one —obvious way to do it" design philosophy.<ref name="PEP20" /> Alex Martelli, a Fellow at the Python Software Foundation and Python book author, writes that "To describe something as 'clever' is not considered a compliment in the Python culture."<ref name="AutoNT-19" />
+
+Python's developers strive to avoid premature optimization, and reject patches to non-critical parts of the CPython reference implementation that would offer marginal increases in speed at the cost of clarity.<ref name="AutoNT-20" /> When speed is important, a Python programmer can move time-critical functions to extension modules written in languages such as C, or use PyPy, a just-in-just-in-time compiler. Cython is also available, which translates a Python script into C and makes direct C-level API calls into the Python interpreter.
+
+An important goal of Python's developers is keeping it fun to use. This is reflected in the language's name—a tribute to the British comedy group Monty Python<ref name="AutoNT-24"/>—and in occasionally playful approaches to tutorials and reference materials, such as examples that refer to spam and eggs (from a famous Monty Python sketch) instead of the standard foo and bar.<ref></ref>
+
+A common neologism in the Python community is pythonic, which can have a wide range of meanings related to program style. To say that code is pythonic is to say that it uses Python idioms well, that it is natural or shows fluency in the language, that it conforms with Python's minimalist philosophy and emphasis on readability. In contrast, code that is difficult to understand or reads like a rough transcription from another programming language is called unpythonic.<ref></ref>
+
+Users and admirers of Python, especially those considered knowledgeable or experienced, are often referred to as Pythonistas.<ref name="AutoNT-27" /><ref name="AutoNT-25" />
+
+Syntax and semantics
+
+
+
+Python is meant to be an easily readable language. Its formatting is visually uncluttered, and it often uses English keywords where other languages use punctuation. Unlike many other languages, it does not use curly brackets to delimit blocks, and semicolons after statements are allowed but are rarely, if ever, used. It has fewer syntactic exceptions and special cases than C or Pascal.<ref name="AutoNT-52" />
+
+Indentation
+
+
+Python uses whitespace indentation, rather than curly brackets or keywords, to delimit blocks. An increase in indentation comes after certain statements; a decrease in indentation signifies the end of the current block.<ref name="AutoNT-53" /> Thus, the program's visual structure accurately represents the program's semantic structure.<ref name=guttag></ref>
+
+Statements and control flow
+Python's statements include (among others):
+* The assignment statement, using a single equals sign <code>=</code>.
+* The <code>if-then-if</code> statement, which conditionally executes a block of code, along with <code>else</code> and <code>elif</code> (a contraction of else-if).
+* The <code>for</code> statement, which iterates over an iterable object, capturing each element to a local variable for use by the attached block.
+* The <code>while</code> statement, which executes a block of code as long as its condition is true.
+* The <code>try</code> statement, which allows exceptions raised in its attached code block to be caught and handled by <code>except</code> clauses; it also ensures that clean-up code in a <code>finally</code> block will always be run regardless of how the block exits.
+* The <code>raise</code> statement, used to raise a specified exception or re-raise a caught exception.
+* The <code>class</code> statement, which executes a block of code and attaches its local namespace to a class, for use in object-oriented programming.
+* The <code>def</code> statement, which defines a function or method.
+* The <code>with</code> statement, from Python&nbsp;2.5 released in September 2006,<ref></ref>
+* The <code>break</code> statement, exits from a loop.
+* The <code>continue</code> statement, skips this iteration and continues with the next item.
+* The <code>del</code> statement, removes a variable, which means the reference from the name to the value is deleted and trying to use that variable will cause an error. A deleted variable can be reassigned.
+* The <code>pass</code> statement, which serves as a NOP. It is syntactically needed to create an empty code block.
+* The <code>assert</code> statement, used during debugging to check for conditions that should apply.
+* The <code>yield</code> statement, which returns a value from a generator function. From Python&nbsp;2.5, <code>yield</code> is also an operator. This form is used to implement coroutines.
+* The <code>return</code> statement, used to return a value from a function.
+* The <code>import</code> statement, which is used to import modules whose functions or variables can be used in the current program. There are three ways of using :
+*#
+*#
+*#.
+
+The assignment statement (<code>=</code>) operates by binding a name as a reference to a separate, dynamically-allocated object. Variables may be subsequently rebound at any time to any object. In Python, a variable name is a generic reference holder and doesn't have a fixed data type associated with it. However at a given time, a variable will refer to some object, which will have a type. This is referred to as dynamic typing and is contrasted with statically-typed programming languages, where each variable may only contain values of a certain type.
+
+Python does not support tail call optimization or first-class continuations, and, according to Guido van Rossum, it never will.<ref name="AutoNT-55" /><ref name="AutoNT-56" /> However, better support for coroutine-like functionality is provided in 2.5, by extending Python's generators.<ref name="AutoNT-57" /> Before 2.5, generators were lazy iterators; information was passed unidirectionally out of the generator. From Python&nbsp;2.5, it is possible to pass information back into a generator function, and from Python&nbsp;3.3, the information can be passed through multiple stack levels.<ref name="AutoNT-58" />
+
+
+Expressions
+Some Python expressions are similar to those found in languages such as C and Java, while some are not:
+* Addition, subtraction, and multiplication are the same, but the behavior of division differs. There are two types of divisions in Python. They are floor division (or integer division) <code>//</code> and floating-point<code>/</code>division.<ref></ref> Python also uses the <code>**</code> operator for exponentiation.
+* From Python&nbsp;3.5, the new <code>@</code> infix operator was introduced. It is intended to be used by libraries such as NumPy for matrix multiplication.<ref name=PEP465></ref>
+* From Python&nbsp;3.8, the syntax <code>:=</code>, called the 'walrus operator' was introduced. It assigns values to variables as part of a larger expression.<ref name=Python3.8Changelog></ref>
+* In Python, <code>==</code> compares by value, versus Java, which compares numerics by value<ref>.
+* Python uses the words <code>and</code>, <code>or</code>, <code>not</code> for its boolean operators rather than the symbolic <code>&&</code>, <code>||</code>, <code>!</code> used in Java and C.
+* Python has a type of expression termed a list comprehension as well as a more general expression termed a generator expression.<ref name="AutoNT-59" />
+* Anonymous functions are implemented using lambda expressions; however, these are limited in that the body can only be one expression.
+* Conditional expressions in Python are written as <ref name="AutoNT-60" /> (different in order of operands from the <code>?:|c ? x : y</code> operator common to many other languages).
+* Python makes a distinction between lists and tuples. Lists are written as </ref>
+* Python features sequence unpacking wherein multiple expressions, each evaluating to anything that can be assigned to (a variable, a writable property, etc.), are associated in an identical manner to that forming tuple literals and, as a whole, are put on the left-hand side of the equal sign in an assignment statement. The statement expects an iterable object on the right-hand side of the equal sign that produces the same number of values as the provided writable expressions when iterated through and will iterate through it, assigning each of the produced values to the corresponding expression on the left.<ref></ref>
+* Python has a "string format" operator <code>%</code>. This functions analogously to <code>printf</code> format strings in C, e.g. </ref>
+* Strings in Python can be concatenated, by "adding" them (same operator as for adding integers and floats). E.g.  returns <code>"22"</code>.
+* Python has various kinds of string literals:
+ * Strings delimited by single or double quote marks. Unlike in Unix shells, Perl and Perl-influenced languages, single quote marks and double quote marks function identically. Both kinds of string use the backslash (<code>\</code>) as an escape character. String interpolation became available in Python&nbsp;3.6 as "formatted string literals".<ref name="pep-0498"/>
+ * Triple-quoted strings, which begin and end with a series of three single or double quote marks. They may span multiple lines and function like here documents in shells, Perl and Ruby.
+ * Raw string varieties, denoted by prefixing the string literal with an <code>r</code>. Escape sequences are not interpreted; hence raw strings are useful where literal backslashes are common, such as regular expressions and Windows-style paths. Compare "<code>@</code>-quoting" in C#.
+* Python has array index and array slicing expressions on lists, denoted as <code>a[key]</code>,  returns a copy of the entire list. Each element of a slice is a shallow copy.
+
+In Python, a distinction between expressions and statements is rigidly enforced, in contrast to languages such as Common Lisp, Scheme, or Ruby. This leads to duplicating some functionality. For example:
+* List comprehensions vs. <code>for</code>-loops
+* Conditional expressions vs. <code>if</code> blocks
+* The <code>eval()</code> vs. <code>exec()</code> built-in functions (in Python&nbsp;2, <code>exec</code> is a statement); the former is for expressions, the latter is for statements.
+
+Statements cannot be a part of an expression, so list and other comprehensions or lambda expressions, all being expressions, cannot contain statements. A particular case of this is that an assignment statement such as  causes a syntax error in Python.
+
+Methods
+Methods on objects are functions attached to the object's class; the syntax . Python methods have an explicit <code>self</code> parameter to access instance data, in contrast to the implicit <code>self</code> (or <code>this</code>) in some other object-oriented programming languages (e.g., C++, Java, Objective-C, or Ruby).<ref name="AutoNT-61" />
+
+Typing
+
+Python uses duck typing and has typed objects but untyped variable names. Type constraints are not checked at compile time; rather, operations on an object may fail, signifying that the given object is not of a suitable type. Despite being dynamically-typed, Python is strongly-typed, forbidding operations that are not well-defined (for example, adding a number to a string) rather than silently attempting to make sense of them.
+
+Python allows programmers to define their own types using classes, which are most often used for object-oriented programming. New instances of classes are constructed by calling the class (for example, ), and the classes are instances of the metaclass <code>type</code> (itself an instance of itself), allowing metaprogramming and reflection.
+
+Before version 3.0, Python had two kinds of classes: old-style and new-style.<ref name="classy" /> The syntax of both styles is the same, the difference being whether the class <code>object</code> is inherited from, directly or indirectly (all new-style classes inherit from <code>object</code> and are instances of <code>type</code>). In versions of Python&nbsp;2 from Python&nbsp;2.2 onwards, both kinds of classes can be used. Old-style classes were eliminated in Python&nbsp;3.0.
+
+The long-term plan is to support gradual typing<ref></ref>
+
+{|class="wikitable"
+|+Summary of Python 3's built-in types
+|-
+! Type
+! Mutability
+! Description
+! style="width: 23em;" Syntax examples
+|-
+| <code>bool</code>
+| immutable
+| Boolean value
+| 
+|-
+| <code>bytearray</code>
+| mutable
+| Sequence of bytes
+| 
+|-
+| <code>bytes</code>
+| immutable
+| Sequence of bytes
+| 
+|-
+| <code>complex</code>
+| immutable
+| Complex number with real and imaginary parts
+| 
+|-
+| <code>dict</code>
+| mutable
+| Associative array (or dictionary) of key and value pairs; can contain mixed types (keys and values), keys must be a hashable type
+| 
+|-
+| <code>ellipsis</code>
+| immutable
+| An ellipsis placeholder to be used as an index in NumPy arrays
+| 
+|-
+| <code>float</code>
+| immutable
+| Double-precision floating-Double-precision floating-floating-point number. The precision is machine-dependent but in practice is generally implemented as a 64-bit IEEE 754 number with 53 bits of precision.<ref>
+{{Cite web
+title=15. Floating Point Arithmetic: Issues and Limitations — Python 3.8.3 documentation
+url=https://docs.python.org/3.8/tutorial/floatingpoint.html#representation-error
+access-date=6 June 2020
+website=docs.python.org
+quote=Almost all machines today (November 2000) use IEEE-754 floating point arithmetic, and almost all platforms map Python floats to IEEE-754 “double precision”.
+}}
+</ref>
+|
+
+|-
+| <code>frozenset</code>
+| immutable
+| Unordered set, contains no duplicates; can contain mixed types, if hashable
+| 
+|-
+| <code>int</code>
+| immutable
+| Integer of unlimited magnitude<ref name="pep0237" />
+| 
+|-
+| <code>list</code>
+| mutable
+| List, can contain mixed types
+| 
+|-
+| <code>NoneType</code>
+| immutable
+| An object representing the absence of a value, often called null in other languages
+| 
+|-
+| <code>NotImplementedType</code>
+| immutable
+| A placeholder that can be returned from overloaded operators to indicate unsupported operand types.
+| 
+|-
+| <code>range</code>
+| immutable
+| A Sequence of numbers commonly used for looping specific number of times in <code>for</code> loops<ref></ref>
+| 
+|-
+| <code>set</code>
+| mutable
+| Unordered set, contains no duplicates; can contain mixed types, if hashable
+| 
+|-
+| <code>str</code>
+| immutable
+| A character string: sequence of Unicode codepoints
+| <br><syntaxhighlight lang="python">"""Spanning
+multiple
+lines"""</syntaxhighlight>
+|-
+| <code>tuple</code>
+| immutable
+| Can contain mixed types
+| 
+|}
+
+
+
+Arithmetic operations
+Python has the usual symbols for arithmetic operators (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>), the floor division operator <code>//</code> and the modulo operation <code>%</code> (where the remainder can be negative,  e.g. <code>4 % -3 == -2</code>). It also has <code>**</code> for exponentiation, e.g. <code>5**3 == 125</code> and <code>9**0.5 == 3.0</code>, and a matrix multiply operator <code>@</code> .<ref></ref> These operators work like in traditional math; with the same precedence rules, the operators infix ( <code>+</code> and <code>-</code> can also be unary to represent positive and negative numbers respectively).
+
+The division between integers produces floating-point results. The behavior of division has changed significantly over time:<ref name="pep0238"/>
+* Python 2.1 and earlier used C's division behavior. The <code>/</code> operator is integer division if both operands are integers, and floating-point division otherwise. Integer division rounds towards 0, e.g. .
+* Python 2.2 changed integer division to round towards negative infinity, e.g. <code>7/3 == 2</code> and <code>-7/3 == -3</code>. The floor division <code>//</code> operator was introduced. So <code>7//3 == 2</code>, <code>-7//3 == -3</code>, <code>7.5//3 == 2.0</code> and <code>-7.5//3 == -3.0</code>. Adding  causes a module to use Python 3.0 rules for division (see next).
+* Python 3.0 changed <code>/</code> to always be floating-point division, e.g. .
+
+In Python terms, <code>/</code> is true division (or simply division), and <code>//</code> is floor division. <code>/</code> before version 3.0 is classic division.<ref name="pep0238"/>
+
+Rounding towards negative infinity, though different from most languages, adds consistency. For instance, it means that the equation  is valid for both positive and negative values of <code>a</code>. However, maintaining the validity of this equation means that while the result of <code>a%b</code> is, as expected, in the half-open interval [0, b), where <code>b</code> is a positive integer, it has to lie in the interval (b, 0] when <code>b</code> is negative.<ref name="AutoNT-62" />
+
+Python provides a <code>round</code> function for rounding a float to the nearest integer. For Rounding#Tie-tie-breaking, Python&nbsp;3 uses round to even: <code>round(1.5)</code> and <code>round(2.5)</code> both produce <code>2</code>.<ref name="AutoNT-64" /> Versions before 3 used round-away-from-zero: <code>round(0.5)</code> is <code>1.0</code>, <code>round(-0.5)</code> is <code>−1.0</code>.<ref name="AutoNT-63" />
+
+Python allows boolean expressions with multiple equality relations in a manner that is consistent with general use in mathematics. For example, the expression <code>a < b < c</code> tests whether <code>a</code> is less than <code>b</code> and <code>b</code> is less than <code>c</code>.<ref name="AutoNT-65" /> C-derived languages interpret this expression differently: in C, the expression would first evaluate <code>a < b</code>, resulting in 0 or 1, and that result would then be compared with <code>c</code>.<ref name="CPL" />
+
+Python uses arbitrary-precision arithmetic for all integer operations. The <code>Decimal</code> type/class in the <code>decimal</code> module provides decimal floating-point numbers to a pre-defined arbitrary precision and several rounding modes.<ref></ref>
+
+Due to Python's extensive mathematics library, and the third-party library NumPy that further extends the native capabilities, it is frequently used as a scientific scripting language to aid in problems such as numerical data processing and manipulation.<ref></ref>
+
+Programming examples
+"Hello, World!"Hello world program:
+<syntaxhighlight lang="python">
+print('Hello, world!')
+</syntaxhighlight>
+
+Program to calculate the factorial of a positive integer:
+<syntaxhighlight lang="python">
+n = int(input('Type a number, and its factorial will be printed: '))
+
+if n < 0:
+    raise ValueError('You must enter a non negative integer')
+
+factorial = 1
+for i in range(2, n + 1):
+    factorial *= i
+
+print(factorial)
+</syntaxhighlight><!--
+
+Please don’t add more examples
+
+-->
+
+Libraries
+Python's large standard library, commonly cited as one of its greatest strengths,<ref name="AutoNT-86" /> provides tools suited to many tasks. For Internet-facing applications, many standard formats and protocols such as MIME and HTTP are supported. It includes modules for creating graphical user interfaces, connecting to relational databases, generating pseudorandom numbers, arithmetic with arbitrary-precision decimals,<ref name="AutoNT-88" /> manipulating regular expressions, and unit testing.
+
+Some parts of the standard library are covered by specifications (for example, the Web Server Gateway Interface (WSGI) implementation <code>wsgiref</code> follows PEP 333<ref name="AutoNT-89" />), but most modules are not. They are specified by their code, internal documentation, and test suites. However, because most of the standard library is cross-platform Python code, only a few modules need altering or rewriting for variant implementations.
+
+</ref> packages with a wide range of functionality, including:
+
+{{columns-colwidth=
+* Automation
+* Data analytics
+* Databases
+* Documentation
+* Graphical user interfaces
+* Image processing
+* Machine learning
+* Mobile App
+* Multimedia
+* Computer Networking
+* Scientific computing
+* System administration
+* Test frameworks
+* Text processing
+* Web frameworks
+* Web scraping
+}}
+
+Development environments
+
+
+Most Python implementations (including CPython) include a read–eval–print loop (REPL), permitting them to function as a command line interpreter for which the user enters statements sequentially and receives results immediately.
+
+Other shells, including IDLE and IPython, add further abilities such as improved auto-completion, session state retention and syntax highlighting.
+
+As well as standard desktop integrated development environments, there are Web browser-based IDEs; SageMath (intended for developing science and math-related Python programs); PythonAnywhere, a browser-based IDE and hosting environment; and Canopy IDE, a commercial Python IDE emphasizing scientific computing.<ref></ref>
+
+Implementations
+
+
+Reference implementation
+CPython is the reference implementation of Python. It is written in C, meeting the C89 standard with several select C99 features (with later C versions out, it's considered outdated;<ref></ref> support has since been dropped for a lot of platforms.<!--
+
+Include more, here or in the infobox? I find e.g.:
+best-effort support:
+
+    Android API 24
+
+and also:
+
+Starting with CPython 3.7.0, *nix platforms are expected to provide at least one of C.UTF-8 (full locale), C.utf8 (full locale) or UTF-8 (LC_CTYPE-only locale) as an alternative to the legacy C locale.
+-->
+
+Other implementations
+* PyPy is a fast, compliant interpreter of Python&nbsp;2.7 and 3.6.<ref name="AutoNT-70" /> Its Just-in-just-in-time compiler brings a significant speed improvement over CPython but several libraries written in C cannot be used with it.<ref name="AutoNT-71" />
+* Stackless Python is a significant fork of CPython that implements microthreads; it does not use the call stack in the same way, thus allowing massively concurrent programs. PyPy also has a stackless version.<ref name="AutoNT-73" />
+* MicroPython and CircuitPython are Python&nbsp;3 variants optimized for microcontrollers, including Lego Mindstorms EV3.<ref></ref>
+* Pyston is a variant of the Python runtime that uses just-in-time compilation to speed up the execution of Python programs.<ref></ref>
+* Cinder is a performance-oriented fork of CPython 3.8 that contains a number of optimizations including bytecode inline caching, eager evaluation of coroutines, a method-at-a-time Just-in-JIT and an experimental bytecode compiler.<ref></ref>
+
+Unsupported implementations
+Other just-in-time Python compilers have been developed, but are now unsupported:
+* Google began a project named Unladen Swallow in 2009, with the aim of speeding up the Python interpreter fivefold by using the LLVM, and of improving its multithreading ability to scale to thousands of cores,<ref name="AutoNT-74" /> while ordinary implementations suffer from the global interpreter lock.
+* Psyco is a discontinued Just-in-just-in-time run-specializing compiler that integrates with CPython and transforms bytecode to machine code at runtime. The emitted code is specialized for certain data types and is faster than the standard Python code. Psyco does not support Python&nbsp;2.7 or later.
+
+* PyS60 was a Python&nbsp;2 interpreter for Series 60 mobile phones released by Nokia in 2005. It implemented many of the modules from the standard library and some additional modules for integrating with the Symbian operating system. The Nokia N900 also supports Python with GTK widget libraries, enabling programs to be written and run on the target device.<ref></ref>
+
+Cross-compilers to other languages
+There are several compilers to high-level object languages, with either unrestricted Python, a restricted subset of Python, or a language similar to Python as the source language:
+* Cython compiles (a superset of) Python&nbsp;2.7 to C (while the resulting code is also usable with Python&nbsp;3 and also e.g. C++).
+* Nuitka compiles Python into C++.<ref></ref>
+* Pythran compiles a subset of Python&nbsp;3 to C++.<ref></ref><ref>http://conference.scipy.org/proceedings/scipy2013/html/pdfs/guelton.pdf</ref>
+* Pyrex (latest release in 2010) and Shed Skin (latest release in 2013) compile to C and C++ respectively.
+* Google's Grumpy (latest release in 2017) transpiles Python&nbsp;2 to Go.<ref></ref>
+* IronPython (now abandoned by Microsoft) allows running Python&nbsp;2.7 programs on the .NET Common Language Runtime.<ref></ref>
+* Jython compiles Python&nbsp;2.7 to Java bytecode, allowing the use of the Java libraries from a Python program.<ref></ref>
+* MyHDL is a Python-based hardware description language (HDL), that converts MyHDL code to Verilog or VHDL code.
+* Numba uses LLVM to compile a subset of Python to machine code.
+* Brython,<ref></ref> and Pyjs (latest release in 2012) compile Python to JavaScript.
+* RPython can be compiled to C, and is used to build the PyPy interpreter of Python.
+
+Performance
+A performance comparison of various Python implementations on a non-numerical (combinatorial) workload was presented at EuroSciPy '13.<ref></ref>
+
+Development
+Python's development is conducted largely through the Python Enhancement Proposal (PEP) process, the primary mechanism for proposing major new features, collecting community input on issues and documenting Python design decisions.<ref name="PepCite000" /> Python coding style is covered in PEP&nbsp;8.<ref></ref> Outstanding PEPs are reviewed and commented on by the Python community and the steering council.<ref name="PepCite000" />
+
+Enhancement of the language corresponds with development of the CPython reference implementation. The mailing list python-dev is the primary forum for the language's development. Specific issues are discussed in the Roundup bug tracker hosted at [https://bugs.python.org bugs.python.org].<ref name="AutoNT-21" /> Development originally took place on a Self-self-hosted source-code repository running Mercurial, until Python moved to GitHub in January 2017.<ref name=py_dev_guide></ref>
+
+CPython's public releases come in three types, distinguished by which part of the version number is incremented:
+* Backward-incompatible versions, where code is expected to break and needs to be manually ported. The first part of the version number is incremented. These releases happen infrequently—version 3.0 was released 8 years after 2.0.
+* Major or "feature" releases, occurred about every 18 months but with the adoption of a yearly release cadence starting with Python&nbsp;3.9 are expected to happen once a year.<ref></ref> They are largely compatible but introduce new features. The second part of the version number is incremented. Each major version is supported by bugfixes for several years after its release.<ref name="release-schedule" />
+* Bugfix releases,<ref name="AutoNT-22" /> which introduce no new features, occur about every 3 months and are made when a sufficient number of bugs have been fixed upstream since the last release. Security vulnerabilities are also patched in these releases. The third and final part of the version number is incremented.<ref name="AutoNT-22" />
+
+Many alpha, beta, and release-candidates are also released as previews and for testing before final releases. Although there is a rough schedule for each release, they are often delayed if the code is not ready. Python's development team monitors the state of the code by running the large unit test suite during development.<ref name="AutoNT-23" />
+
+The major academic conference on Python is PyCon. There are also special Python mentoring programmes, such as Pyladies.
+
+Pythons&nbsp;3.10 deprecates wstr (to be removed in Python&nbsp;3.12; meaning Python extensions<ref></ref>
+
+API documentation generators
+Tools that can generate documentation for Python API include pydoc (available as part of standard library), Sphinx, Pdoc and its forks, Doxygen and Graphviz, among others.<ref></ref>
+
+Naming
+Python's name is derived from the British comedy group Monty Python, whom Python creator Guido van Rossum enjoyed while developing the language. Monty Python references appear frequently in Python code and culture;<ref name="tutorial-chapter1" /> for example, the metasyntactic variables often used in Python literature are spam and eggs instead of the traditional foo and bar.<ref name="tutorial-chapter1" /><ref name="AutoNT-26" /> The official Python documentation also contains various references to Monty Python routines.<ref></ref>
+
+The prefix Py- is used to show that something is related to Python. Examples of the use of this prefix in names of Python applications or libraries include Pygame, a binding of SDL to Python (commonly used to create games); PyQt and PyGTK, which bind Qt and GTK to Python respectively; and PyPy, a Python implementation originally written in Python.
+
+Uses
+
+Since 2003, Python has consistently ranked in the top ten most popular programming languages in the TIOBE Programming Community Index where, </ref>).<ref name="AutoNT-34" />
+
+An empirical study found that scripting languages, such as Python, are more productive than conventional languages, such as C and Java, for programming problems involving string manipulation and search in a dictionary, and determined that memory consumption was often "better than Java and not much worse than C or C++".<ref name="AutoNT-28" />
+
+Large organizations that use Python include Wikipedia, Google,<ref name="quotes-about-python" /> Yahoo!,<ref name="AutoNT-29" /> CERN,<ref name="AutoNT-30" /> NASA,<ref name="AutoNT-31" /> Facebook,<ref></ref>
+
+Python can serve as a scripting language for web applications, e.g., via  for the Apache web server.<ref name="AutoNT-35" /> With Web Server Gateway Interface, a standard API has evolved to facilitate these applications. Web frameworks like Django, Pylons, Pyramid, TurboGears, web2py, Tornado, Flask, Bottle and Zope support developers in the design and maintenance of complex applications. Pyjs and IronPython can be used to develop the client-side of Ajax-based applications. SQLAlchemy can be used as a data mapper to a relational database. Twisted is a framework to program communications between computers, and is used (for example) by Dropbox.
+
+Libraries such as NumPy, SciPy and Matplotlib allow the effective use of Python in scientific computing,<ref name="cise"></ref>
+
+Python is commonly used in artificial intelligence projects and machine learning projects with the help of libraries like TensorFlow, Keras, Pytorch and Scikit-learn.<ref name=whitepaper2015></ref> As a scripting language with modular architecture, simple syntax and rich text processing tools, Python is often used for natural language processing.<ref name="AutoNT-47" />
+
+Python has been successfully embedded in many software products as a scripting language, including in finite element method software such as Abaqus, 3D parametric modeler like FreeCAD, 3D animation packages such as 3ds Max, Blender, Cinema 4D, Lightwave, Houdini, Maya, modo, MotionBuilder, Softimage, the visual effects compositor Nuke, 2D imaging programs like GIMP,<ref></ref> Inkscape, Scribus and Paint Shop Pro,<ref name="AutoNT-38" /> and musical notation programs like scorewriter and capella. GNU Debugger uses Python as a pretty printer to show complex structures such as C++ containers. Esri promotes Python as the best choice for writing scripts in ArcGIS.<ref name="AutoNT-39" /> It has also been used in several video games,<ref name="AutoNT-40" /><ref name="AutoNT-41" /> and has been adopted as first of the three available programming languages in Google App Engine, the other two being Java and Go.<ref name="AutoNT-42" />
+
+Many operating systems include Python as a standard component. It ships with most Linux distributions,<ref></ref> AmigaOS 4 (using Python&nbsp;2.7), FreeBSD (as a package), NetBSD, OpenBSD (as a package) and macOS and can be used from the command line (terminal). Many Linux distributions use installers written in Python: Ubuntu uses the Ubiquity installer, while Red Hat Linux and Fedora use the Anaconda installer. Gentoo Linux uses Python in its package management system, Portage.
+
+Python is used extensively in the information security industry, including in exploit development.<ref name="AutoNT-49" /><ref name="AutoNT-50" />
+
+Most of the Sugar software for the One Laptop per Child XO, now developed at Sugar Labs, is written in Python.<ref name="AutoNT-51" /> The Raspberry Pi single-board computer project has adopted Python as its main user-programming language.
+
+LibreOffice includes Python, and intends to replace Java with Python. Its Python Scripting Provider is a core feature<ref></ref> since Version 4.0 from 7 February 2013.
+
+Languages influenced by Python
+Python's design and philosophy have influenced many other programming languages:
+* Boo uses indentation, a similar syntax, and a similar object model.<ref name="AutoNT-90" />
+* Cobra uses indentation and a similar syntax, and its Acknowledgements document lists Python first among languages that influenced it.<ref name="AutoNT-91" />
+* CoffeeScript, a programming language that cross-compiles to JavaScript, has Python-inspired syntax.
+* ECMAScript/JavaScript borrowed iterators and generators from Python.<ref name="AutoNT-93" />
+* GDScript, a scripting language very similar to Python, built-in to the Godot game engine.<ref></ref>
+* Go is designed for the "speed of working in a dynamic language like Python"<ref name="AutoNT-94"/> and shares the same syntax for slicing arrays.
+* Groovy was motivated by the desire to bring the Python design philosophy to Java.<ref name="AutoNT-95" />
+* Julia was designed to be "as usable for general programming as Python".<ref name=Julia></ref>
+* Nim uses indentation and similar syntax.<ref></ref>
+* Ruby's creator, Yukihiro Matsumoto, has said: "I wanted a scripting language that was more powerful than Perl, and more object-oriented than Python. That's why I decided to design my own language."<ref name="linuxdevcenter" />
+* Swift, a programming language developed by Apple, has some Python-inspired syntax.<ref></ref>
+
+Python's development practices have also been emulated by other languages. For example, the practice of requiring a document describing the rationale for, and issues surrounding, a change to the language (in Python, a PEP) is also used in Tcl,<ref name="AutoNT-99" /> Erlang,<ref name="AutoNT-100" /> and Swift.<ref></ref>
+
+See also
+
+* Python syntax and semantics
+* pip (package manager)
+* Differentiable programming
+
+References
+{{refs
+
+<ref name="faq-created"></ref>
+
+<ref name="98-interview"></ref>
+
+<ref name="AutoNT-1"></ref>
+
+<ref name="classmix"></ref>
+
+<ref name="effbot-call-by-object"></ref>
+
+<ref name="AutoNT-2"></ref>
+
+<ref name="AutoNT-3"></ref>
+
+<ref name="pep0238"></ref>
+
+<ref name="AutoNT-4"></ref>
+
+<ref name="AutoNT-5"></ref>
+
+<ref name="AutoNT-6"></ref>
+
+<ref name="bini"></ref>
+
+<ref name="AutoNT-7"></ref>
+
+<ref name="About">, second section "Fans of Python use the phrase "batteries included" to describe the standard library, which covers everything from asynchronous processing to zip files."</ref>
+
+<ref name="venners-interview-pt-1"></ref>
+
+<ref name="timeline-of-python">{{url=https://python-history.blogspot.com/2009/01/brief-timeline-of-python.html
+|title=last=first=date=work=access-date=20 January 2009}}</ref>
+
+<ref name="AutoNT-12"></ref>
+
+<ref name="newin-2.0"></ref>
+
+<ref name="3.0-release"></ref>
+
+<ref name="pep-3000"></ref>
+
+<ref name="AutoNT-13"></ref>
+
+<ref name="AutoNT-14"></ref>
+
+<ref name="AutoNT-15"></ref>
+
+<ref name="AutoNT-16"></ref>
+
+<ref name="AutoNT-17"></ref>
+
+<ref name="AutoNT-18"></ref>
+
+<ref name="PEP20"></ref>
+
+<ref name="AutoNT-19"></ref>
+
+<ref name="AutoNT-20"></ref>
+
+<ref name="PepCite000"></ref>
+
+<ref name="AutoNT-21"></ref>
+
+<ref name="release-schedule"></ref>
+
+<ref name="AutoNT-22"></ref>
+
+<ref name="AutoNT-23"></ref>
+
+<ref name="AutoNT-24"></ref>
+
+<ref name="tutorial-chapter1"></ref>
+
+<ref name="AutoNT-25"></ref>
+
+<ref name="AutoNT-26"></ref>
+
+<ref name="AutoNT-27"></ref>
+
+<ref name="AutoNT-28"></ref>
+
+<ref name="quotes-about-python"></ref>
+
+<ref name="AutoNT-29"></ref>
+
+<ref name="AutoNT-30"></ref>
+
+<ref name="AutoNT-31"></ref>
+
+<ref name="AutoNT-32"></ref>
+
+<ref name="AutoNT-33"></ref>
+
+<ref name="AutoNT-34"></ref>
+
+<ref name="AutoNT-35"></ref>
+
+<ref name="AutoNT-38"></ref>
+
+<ref name="AutoNT-39"></ref>
+
+<ref name="AutoNT-40"></ref>
+
+<ref name="AutoNT-41"></ref>
+
+<ref name="AutoNT-42"></ref>
+
+<ref name="AutoNT-47"></ref>
+
+<ref name="AutoNT-49"></ref>
+
+<ref name="AutoNT-50"></ref>
+
+<ref name="AutoNT-51"></ref>
+
+<ref name="AutoNT-52"></ref>
+
+<ref name="AutoNT-53"></ref>
+
+
+
+<ref name="AutoNT-55"></ref>
+
+<ref name="AutoNT-56"></ref>
+
+<ref name="AutoNT-57"></ref>
+
+<ref name="AutoNT-58"></ref>
+
+<ref name="AutoNT-59"></ref>
+
+<ref name="AutoNT-60"></ref>
+
+<ref name="AutoNT-61"></ref>
+
+<ref name="classy"></ref>
+
+<ref name="pep0237"></ref>
+
+<ref name="AutoNT-62"></ref>
+
+<ref name="AutoNT-63"></ref>
+
+<ref name="AutoNT-64"></ref>
+
+<ref name="AutoNT-65"></ref>
+
+<ref name="CPL"></ref>
+
+<ref name="AutoNT-66"></ref>
+
+<ref name="AutoNT-67"></ref>
+
+<ref name="AutoNT-68"></ref>
+
+<ref name="AutoNT-69"></ref>
+
+<ref name="AutoNT-70"></ref>
+
+<ref name="AutoNT-71"></ref>
+
+<ref name="AutoNT-73"></ref>
+
+<ref name="AutoNT-74"></ref>
+
+<ref name="AutoNT-86"></ref>
+
+<ref name="AutoNT-88"></ref>
+
+<ref name="AutoNT-89"></ref>
+
+<ref name="AutoNT-90"></ref>
+
+<ref name="AutoNT-91"></ref>
+
+
+
+<ref name="AutoNT-93"></ref>
+
+<ref name="AutoNT-94"></ref>
+
+<ref name="AutoNT-95"></ref>
+
+<ref name="linuxdevcenter"></ref>
+
+<ref name="AutoNT-99"></ref>
+
+<ref name="AutoNT-100"></ref>
+
+
+
+<ref name="lj-bdfl-resignation"></ref>
+
+}}
+
+Sources
+* 
+* 
+* 
+* 
+
+Further reading
+<!-- THIS IS *NOT* A LIST OF ALL PYTHON BOOKS
+According to Wikipedia:Further reading, criteria for inclusion includes:
+1. Should clearly qualify as WP:RS, as indicated by reviews and citations to it.
+...
+5. There should be guidelines on limiting the number of sources.
+6. To avoid spam, any book included should have received more than one good review in RS: newspapers and scholarly journals being the norm, and the clear balance of RS reviews should be positive. This would avoid self-publish spamming, POV pushing, and attempts by publishers to get books promoted through inclusion on Wikipedia. At the moment "editorial recommendations" as described in the manual smacks of OR.
+7. Neutrality on the part of editors is essential. In terms of major debates, items representing all major positions should be included, with annotations indicating the specific POV of each. We may have to work out rules where topic disputes are irreconcilable.
+-->
+* 
+* 
+* 
+* 
+* 
+* 
+
+External links
+<!-- =====================  ===================
+| PLEASE BE CAUTIOUS IN ADDING MORE LINKS TO THIS ARTICLE.
+| is not a collection of links nor should it be used for advertising.
+|
+| Excessive or inappropriate links WILL BE DELETED.
+| See Wikipedia:External links & Wikipedia:Spam for details.
+|
+| If there are already plentiful links,
+| replacements on this article's discussion page,
+| to the relevant category at the Open Directory Project (dmoz.
+| and link back to that category using the  template.
+====================  ====================== -->
+
+
+* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

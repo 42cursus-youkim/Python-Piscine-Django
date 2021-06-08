@@ -1,0 +1,1172 @@
+{% extends 'ex01/style.html' %}
+{% block content %}
+
+<body class="wy-body-for-nav vsc-initialized" style="">
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          <a href="#" class="icon icon-home"> django-simple-history
+          </a>
+          <div class="version">
+            latest
+          </div>
+          <div role="search">
+            <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              <input type="hidden" name="check_keywords" value="yes">
+              <input type="hidden" name="area" value="default">
+            </form>
+          </div>
+
+
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+
+
+
+
+
+
+          <ul>
+            <li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="querying_history.html">Querying History</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="admin.html">Admin Integration</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="historical_model.html">Historical Model
+                Customizations</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="user_tracking.html">User Tracking</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="signals.html">Signals</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="history_diffing.html">History Diffing</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="multiple_dbs.html">Multiple databases</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="utils.html">Utils</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="common_issues.html">Common Issues</a></li>
+          </ul>
+
+
+
+        </div>
+        <div id="rtd-sidebar" data-ea-publisher="readthedocs" data-ea-type="readthedocs-sidebar" data-ea-manual="true"
+          class="ethical-rtd ethical-dark-theme loaded"
+          data-ea-keywords="audit|django|history|log|model|python|readthedocs-project-7263|readthedocs-project-django-simple-history"
+          data-ea-campaign-types="community|house|paid">
+          <div class="ethical-sidebar">
+            <div class="ethical-content"><a
+                href="https://server.ethicalads.io/proxy/click/1496/a61d2213-a361-4047-97cd-ac567864ffe1/"
+                rel="nofollow" target="_blank" class="ethical-image-link"><img
+                  src="https://media.ethicalads.io/media/images/2021/05/openSource-220x220.png"></a>
+              <div class="ethical-text"><a
+                  href="https://server.ethicalads.io/proxy/click/1496/a61d2213-a361-4047-97cd-ac567864ffe1/"
+                  rel="nofollow" target="_blank"><strong>Hiring now! </strong><span>Work as a professional open-source
+                    developer and become a core committer of Open edX</span><strong> Apply</strong></a></div>
+            </div>
+            <div class="ethical-callout"><small><em><a
+                    href="https://readthedocs.org/sustainability/advertising/">Sponsored</a><span> · </span><a
+                    href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served
+                    ethically</a></em></small></div>
+          </div><img
+            src="https://server.ethicalads.io/proxy/view/1496/a61d2213-a361-4047-97cd-ac567864ffe1/?uplift=true"
+            class="ea-pixel">
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+
+      <nav class="wy-nav-top" aria-label="top navigation">
+
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">django-simple-history</a>
+
+      </nav>
+
+
+      <div class="wy-nav-content">
+
+        <div class="rst-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div role="navigation" aria-label="breadcrumbs navigation">
+
+            <ul class="wy-breadcrumbs">
+
+              <li><a href="#">Docs</a> »</li>
+
+              <li>django-simple-history</li>
+
+
+              <li class="wy-breadcrumbs-aside">
+
+
+
+                <a href="https://github.com/jazzband/django-simple-history/blob/master/docs/index.rst"
+                  class="fa fa-github"> Edit on GitHub</a>
+
+
+
+              </li>
+
+            </ul>
+
+
+            <hr>
+          </div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div itemprop="articleBody">
+
+              <div class="section" id="django-simple-history">
+                <h1>django-simple-history<a class="headerlink" href="#django-simple-history"
+                    title="Permalink to this headline">¶</a></h1>
+                <a class="reference external image-reference"
+                  href="http://travis-ci.org/jazzband/django-simple-history"><img alt="Build Status"
+                    src="https://secure.travis-ci.org/jazzband/django-simple-history.svg?branch=master"></a>
+                <a class="reference external image-reference"
+                  href="https://django-simple-history.readthedocs.io/en/latest/?badge=latest"><img
+                    alt="Documentation Status"
+                    src="https://readthedocs.org/projects/django-simple-history/badge/?version=latest"></a>
+                <a class="reference external image-reference"
+                  href="http://codecov.io/github/jazzband/django-simple-history?branch=master"><img alt="Test Coverage"
+                    src="https://img.shields.io/codecov/c/github/jazzband/django-simple-history/master.svg"></a>
+                <a class="reference external image-reference"
+                  href="https://pypi.python.org/pypi/django-simple-history"><img alt="PyPI Version"
+                    src="https://img.shields.io/pypi/v/django-simple-history.svg"></a>
+                <a class="reference external image-reference"
+                  href="https://codeclimate.com/github/treyhunner/django-simple-history/maintainability"><img
+                    alt="Maintainability"
+                    src="https://api.codeclimate.com/v1/badges/66cfd94e2db991f2d28a/maintainability"></a>
+                <a class="reference external image-reference"
+                  href="https://pepy.tech/project/django-simple-history"><img alt="Downloads"
+                    src="https://pepy.tech/badge/django-simple-history"></a>
+                <a class="reference external image-reference" href="https://github.com/ambv/black"><img alt="Code Style"
+                    src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+                <a class="reference external image-reference" href="https://jazzband.co/"><img alt="Jazzband"
+                    src="https://jazzband.co/static/img/badge.svg"></a>
+                <p>django-simple-history stores Django model state on every create/update/delete.</p>
+                <p>This app supports the following combinations of Django and Python:</p>
+                <div class="wy-table-responsive">
+                  <table border="1" class="docutils">
+                    <colgroup>
+                      <col width="30%">
+                      <col width="70%">
+                    </colgroup>
+                    <thead valign="bottom">
+                      <tr class="row-odd">
+                        <th class="head">Django</th>
+                        <th class="head">Python</th>
+                      </tr>
+                    </thead>
+                    <tbody valign="top">
+                      <tr class="row-even">
+                        <td>2.2</td>
+                        <td>3.6, 3.7, 3.8, 3.9</td>
+                      </tr>
+                      <tr class="row-odd">
+                        <td>3.1</td>
+                        <td>3.6, 3.7, 3.8, 3.9</td>
+                      </tr>
+                      <tr class="row-even">
+                        <td>3.2</td>
+                        <td>3.6, 3.7, 3.8, 3.9</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="section" id="contribute">
+                  <h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Issue Tracker: <a class="reference external"
+                        href="https://github.com/jazzband/django-simple-history/issues">https://github.com/jazzband/django-simple-history/issues</a>
+                    </li>
+                    <li>Source Code: <a class="reference external"
+                        href="https://github.com/jazzband/django-simple-history">https://github.com/jazzband/django-simple-history</a>
+                    </li>
+                  </ul>
+                  <p>Pull requests are welcome.</p>
+                </div>
+                <div class="section" id="documentation">
+                  <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a>
+                  </h2>
+                  <div class="toctree-wrapper compound">
+                    <ul>
+                      <li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start</a>
+                        <ul>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="quick_start.html#install">Install</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="quick_start.html#configure">Configure</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="quick_start.html#run-migrations">Run Migrations</a></li>
+                          <li class="toctree-l2"><a class="reference internal" href="quick_start.html#what-now">What
+                              Now?</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="quick_start.html#what-is-django-simple-history-doing-behind-the-scenes">What is
+                              <code
+                                class="docutils literal notranslate"><span class="pre">django-simple-history</span></code>
+                              Doing Behind the Scenes?</a></li>
+                        </ul>
+                      </li>
+                      <li class="toctree-l1"><a class="reference internal" href="querying_history.html">Querying
+                          History</a>
+                        <ul>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="querying_history.html#querying-history-on-a-model-instance">Querying history on a
+                              model instance</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="querying_history.html#querying-history-on-a-model-class">Querying history on a model
+                              class</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="querying_history.html#getting-previous-and-next-historical-record">Getting previous
+                              and next historical record</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="querying_history.html#reverting-the-model">Reverting the Model</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="querying_history.html#as-of">as_of</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="querying_history.html#most-recent">most_recent</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="querying_history.html#save-without-a-historical-record">Save without a historical
+                              record</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="querying_history.html#filtering-data-using-a-relationship-to-the-model">Filtering
+                              data using a relationship to the model</a></li>
+                        </ul>
+                      </li>
+                      <li class="toctree-l1"><a class="reference internal" href="admin.html">Admin Integration</a>
+                        <ul>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="admin.html#displaying-custom-columns-in-the-admin-history-list-view">Displaying
+                              custom columns in the admin history list view</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="admin.html#disabling-the-option-to-revert-an-object">Disabling the option to revert
+                              an object</a></li>
+                        </ul>
+                      </li>
+                      <li class="toctree-l1"><a class="reference internal" href="historical_model.html">Historical Model
+                          Customizations</a>
+                        <ul>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="historical_model.html#custom-history-id">Custom <code
+                                class="docutils literal notranslate"><span class="pre">history_id</span></code></a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="historical_model.html#custom-history-date">Custom <code
+                                class="docutils literal notranslate"><span class="pre">history_date</span></code></a>
+                          </li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="historical_model.html#custom-history-table-name">Custom history table name</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="historical_model.html#custom-model-name">Custom model name</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="historical_model.html#textfield-as-history-change-reason">TextField as
+                              <cite>history_change_reason</cite></a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="historical_model.html#change-base-class-of-historicalrecord-models">Change Base
+                              Class of HistoricalRecord Models</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="historical_model.html#excluded-fields">Excluded Fields</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="historical_model.html#adding-additional-fields-to-historical-models">Adding
+                              additional fields to historical models</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="historical_model.html#change-reason">Change Reason</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="historical_model.html#deleting-historical-record">Deleting historical record</a>
+                          </li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="historical_model.html#allow-tracking-to-be-inherited">Allow tracking to be
+                              inherited</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="historical_model.html#history-model-in-different-app">History Model In Different
+                              App</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="historical_model.html#filefield-as-a-charfield"><cite>FileField</cite> as a
+                              <cite>CharField</cite></a></li>
+                        </ul>
+                      </li>
+                      <li class="toctree-l1"><a class="reference internal" href="user_tracking.html">User Tracking</a>
+                        <ul>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="user_tracking.html#recording-which-user-changed-a-model">Recording Which User
+                              Changed a Model</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="user_tracking.html#change-user-model">Change User Model</a></li>
+                        </ul>
+                      </li>
+                      <li class="toctree-l1"><a class="reference internal" href="signals.html">Signals</a></li>
+                      <li class="toctree-l1"><a class="reference internal" href="history_diffing.html">History
+                          Diffing</a></li>
+                      <li class="toctree-l1"><a class="reference internal" href="multiple_dbs.html">Multiple
+                          databases</a>
+                        <ul>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="multiple_dbs.html#interacting-with-multiple-databases">Interacting with Multiple
+                              Databases</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="multiple_dbs.html#tracking-user-in-a-separate-database">Tracking User in a Separate
+                              Database</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="multiple_dbs.html#tracking-history-separate-from-the-base-model">Tracking History
+                              Separate from the Base Model</a></li>
+                        </ul>
+                      </li>
+                      <li class="toctree-l1"><a class="reference internal" href="utils.html">Utils</a>
+                        <ul>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="utils.html#clean-duplicate-history">clean_duplicate_history</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="utils.html#clean-old-history">clean_old_history</a></li>
+                        </ul>
+                      </li>
+                      <li class="toctree-l1"><a class="reference internal" href="common_issues.html">Common Issues</a>
+                        <ul>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="common_issues.html#bulk-creating-and-queryset-updating">Bulk Creating and Queryset
+                              Updating</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="common_issues.html#tracking-custom-users">Tracking Custom Users</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="common_issues.html#using-django-webtest-with-middleware">Using django-webtest with
+                              Middleware</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="common_issues.html#using-f-expressions">Using F() expressions</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="common_issues.html#reserved-field-names">Reserved Field Names</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="common_issues.html#multi-table-inheritance">Multi-table Inheritance</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="common_issues.html#usage-with-django-modeltranslation">Usage with
+                              django-modeltranslation</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="common_issues.html#pointing-to-the-model">Pointing to the model</a></li>
+                          <li class="toctree-l2"><a class="reference internal"
+                              href="common_issues.html#working-with-bitbucket-pipelines">Working with BitBucket
+                              Pipelines</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="section" id="changes">
+                <h1>Changes<a class="headerlink" href="#changes" title="Permalink to this headline">¶</a></h1>
+                <div class="section" id="unreleased">
+                  <h2>Unreleased<a class="headerlink" href="#unreleased" title="Permalink to this headline">¶</a></h2>
+                </div>
+                <div class="section" id="id1">
+                  <h2>3.0.0 (2021-04-16)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+                  <p>Breaking changes:</p>
+                  <ul class="simple">
+                    <li>Removed support for Django 3.0</li>
+                    <li>Removed <cite>changeReason</cite> in favor of <cite>_change_reason</cite> (see 2.10.0)</li>
+                  </ul>
+                  <p>Full list of changes:</p>
+                  <ul class="simple">
+                    <li>Removed support for Django versions prior to 2.2 (gh-652)</li>
+                    <li>Migrate from TravisCI to Github Actions (gh-739)</li>
+                    <li>Add Python 3.9 support (gh-745)</li>
+                    <li>Support <code
+                        class="docutils literal notranslate"><span class="pre">ignore_conflicts</span></code> in <code
+                        class="docutils literal notranslate"><span class="pre">bulk_create_with_history</span></code>
+                      (gh-733)</li>
+                    <li>Use <code class="docutils literal notranslate"><span class="pre">asgiref</span></code> when
+                      available instead of thread locals (gh-747)</li>
+                    <li>Sort imports with isort (gh-751)</li>
+                    <li>Queryset <code
+                        class="docutils literal notranslate"><span class="pre">history.as_of</span></code> speed
+                      improvements by calculating in the DB (gh-758)</li>
+                    <li>Increase <cite>black</cite> and <cite>isort</cite> python version to 3.6 (gh-817)</li>
+                    <li>Remove Django 3.0 support (gh-817)</li>
+                    <li>Add Django 3.2 support (gh-817)</li>
+                    <li>Improve French translations (gh-811)</li>
+                    <li>Remove support for changeReason (gh-819)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id2">
+                  <h2>2.12.0 (2020-10-14)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Add default date to <code
+                        class="docutils literal notranslate"><span class="pre">bulk_create_with_history</span></code>
+                      and <code
+                        class="docutils literal notranslate"><span class="pre">bulk_update_with_history</span></code>
+                      (gh-687)</li>
+                    <li>Exclude ManyToManyFields when using <code
+                        class="docutils literal notranslate"><span class="pre">bulk_create_with_history</span></code>
+                      (gh-699)</li>
+                    <li>Added <code
+                        class="docutils literal notranslate"><span class="pre">--excluded_fields</span></code> argument
+                      to <code
+                        class="docutils literal notranslate"><span class="pre">clean_duplicate_history</span></code>
+                      command (gh-674)</li>
+                    <li>Exclude ManyToManyFields when fetching excluded fields (gh-707)</li>
+                    <li>Use default model manager for <code
+                        class="docutils literal notranslate"><span class="pre">bulk_create_with_history</span></code>
+                      and
+                      <code
+                        class="docutils literal notranslate"><span class="pre">bulk_update_with_history</span></code>
+                      instead of <code class="docutils literal notranslate"><span class="pre">objects</span></code>
+                      (gh-703)
+                    </li>
+                    <li>Add optional <code class="docutils literal notranslate"><span class="pre">manager</span></code>
+                      argument to <code
+                        class="docutils literal notranslate"><span class="pre">bulk_update_with_history</span></code> to
+                      use instead of
+                      the default manager (gh-703)</li>
+                    <li>Add support for Django 3.1 (gh-713)</li>
+                    <li>Fix a bug with <code
+                        class="docutils literal notranslate"><span class="pre">clean_old_history</span></code> command’s
+                      <cite>–days</cite> argument (gh-722)
+                    </li>
+                  </ul>
+                  <p>* NOTE: This will be the last minor release before 3.0.0.</p>
+                </div>
+                <div class="section" id="id3">
+                  <h2>2.11.0 (2020-06-20)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Added <code
+                        class="docutils literal notranslate"><span class="pre">clean_old_history</span></code>
+                      management command (gh-675)</li>
+                    <li>Added <code
+                        class="docutils literal notranslate"><span class="pre">user_db_constraint</span></code> param to
+                      history to avoid circular reference on delete (gh-676)</li>
+                    <li>Leverages <code class="docutils literal notranslate"><span class="pre">get_user</span></code>
+                      from <code class="docutils literal notranslate"><span class="pre">HistoricalRecords</span></code>
+                      in order to set a fallback user on
+                      bulk update and bulk create (gh-677)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id4">
+                  <h2>2.10.0 (2020-04-27)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Added <code
+                        class="docutils literal notranslate"><span class="pre">bulk_update_with_history</span></code>
+                      utility function (gh-650)</li>
+                    <li>Add default user and default change reason to <code
+                        class="docutils literal notranslate"><span class="pre">bulk_create_with_history</span></code>
+                      and <code
+                        class="docutils literal notranslate"><span class="pre">bulk_update_with_history</span></code>
+                      (gh-653)</li>
+                    <li>Add french translation (gh-654)</li>
+                    <li>Start using <code
+                        class="docutils literal notranslate"><span class="pre">_change_reason</span></code> instead of
+                      <code class="docutils literal notranslate"><span class="pre">changeReason</span></code> to add
+                      change reasons to historical
+                      objects. <code class="docutils literal notranslate"><span class="pre">changeReason</span></code>
+                      is deprecated and will be removed in version <code
+                        class="docutils literal notranslate"><span class="pre">3.0.0</span></code> (gh-655)
+                    </li>
+                  </ul>
+                </div>
+                <div class="section" id="id5">
+                  <h2>2.9.0 (2020-04-23)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Add simple filtering if provided a minutes argument in <code
+                        class="docutils literal notranslate"><span class="pre">clean_duplicate_history</span></code>
+                      (gh-606)</li>
+                    <li>Add setting to convert <code
+                        class="docutils literal notranslate"><span class="pre">FileField</span></code> to <code
+                        class="docutils literal notranslate"><span class="pre">CharField</span></code> instead of <code
+                        class="docutils literal notranslate"><span class="pre">TextField</span></code> (gh-625)</li>
+                    <li>Added notes on BitBucket Pipelines (gh-627)</li>
+                    <li>import model <code
+                        class="docutils literal notranslate"><span class="pre">ContentType</span></code> in <code
+                        class="docutils literal notranslate"><span class="pre">SimpleHistoryAdmin</span></code> using
+                      <code class="docutils literal notranslate"><span class="pre">django_apps.get_model</span></code>
+                      to avoid possible <code
+                        class="docutils literal notranslate"><span class="pre">AppRegistryNotReady</span></code>
+                      exception (gh-630)
+                    </li>
+                    <li>Fix <code
+                        class="docutils literal notranslate"><span class="pre">utils.update_change_reason</span></code>
+                      when user specifies excluded_fields (gh-637)</li>
+                    <li>Changed how <code class="docutils literal notranslate"><span class="pre">now</span></code> is
+                      imported from <code class="docutils literal notranslate"><span class="pre">timezone</span></code>
+                      (<code class="docutils literal notranslate"><span class="pre">timezone</span></code> module is
+                      imported now) (gh-643)</li>
+                    <li><code
+                        class="docutils literal notranslate"><span class="pre">settings.SIMPLE_HISTORY_REVERT_DISABLED</span></code>
+                      if True removes the Revert
+                      button from the history form for all historical models (gh-632))</li>
+                  </ul>
+                </div>
+                <div class="section" id="id6">
+                  <h2>2.8.0 (2019-12-02)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Fixed <code
+                        class="docutils literal notranslate"><span class="pre">bulk_create_with_history</span> <span class="pre">support</span></code>
+                      for HistoryRecords with <code
+                        class="docutils literal notranslate"><span class="pre">relation_name</span></code> attribute
+                      (gh-591)</li>
+                    <li>Added support for <code
+                        class="docutils literal notranslate"><span class="pre">bulk_create_with_history</span></code>
+                      for databases different from PostgreSQL (gh-577)</li>
+                    <li>Fixed <code class="docutils literal notranslate"><span class="pre">DoesNotExist</span></code>
+                      error when trying to get instance if object is deleted (gh-571)</li>
+                    <li>Fix <code class="docutils literal notranslate"><span class="pre">model_to_dict</span></code> to
+                      detect changes in a parent model when using
+                      <code class="docutils literal notranslate"><span class="pre">inherit=True</span></code>
+                      (backwards-incompatible for users who were directly
+                      using previous version) (gh-576)
+                    </li>
+                    <li>Use an iterator for <code
+                        class="docutils literal notranslate"><span class="pre">clean_duplicate_history</span></code>
+                      (gh-604)</li>
+                    <li>Add support for Python 3.8 and Django 3.0 (gh-610)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id7">
+                  <h2>2.7.3 (2019-07-15)<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Fixed <code class="docutils literal notranslate"><span class="pre">BigAutoField</span></code>
+                      not mirrored as <code class="docutils literal notranslate"><span class="pre">BigInt</span></code>
+                      (gh-556)</li>
+                    <li>Fixed <code class="docutils literal notranslate"><span class="pre">most_recent()</span></code>
+                      bug with <code
+                        class="docutils literal notranslate"><span class="pre">excluded_fields</span></code> (gh-561)
+                    </li>
+                    <li>Added official Django 2.2 support (gh-555)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id8">
+                  <h2>2.7.2 (2019-04-17)<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Fixed ModuleNotFound issue for <code
+                        class="docutils literal notranslate"><span class="pre">six</span></code> (gh-553)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id9">
+                  <h2>2.7.1 (2019-04-16)<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Added the possibility to create a relation to the original model (gh-536)</li>
+                    <li>Fix router backward-compatibility issue with 2.7.0 (gh-539, gh-547)</li>
+                    <li>Fix hardcoded history manager (gh-542)</li>
+                    <li>Replace deprecated <code
+                        class="docutils literal notranslate"><span class="pre">django.utils.six</span></code> with <code
+                        class="docutils literal notranslate"><span class="pre">six</span></code> (gh-526)</li>
+                    <li>Allow <code
+                        class="docutils literal notranslate"><span class="pre">custom_model_name</span></code> parameter
+                      to be a callable (gh-489)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id10">
+                  <h2>2.7.0 (2019-01-16)<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>* Add support for <code
+                        class="docutils literal notranslate"><span class="pre">using</span></code> chained manager
+                      method and save/delete keyword argument (gh-507)</li>
+                    <li>Added management command <code
+                        class="docutils literal notranslate"><span class="pre">clean_duplicate_history</span></code> to
+                      remove duplicate history entries (gh-483)</li>
+                    <li>Updated most_recent to work with excluded_fields (gh-477)</li>
+                    <li>Fixed bug that prevented self-referential foreign key from using <code
+                        class="docutils literal notranslate"><span class="pre">'self'</span></code> (gh-513)</li>
+                    <li>Added ability to track custom user with explicit custom <code
+                        class="docutils literal notranslate"><span class="pre">history_user_id_field</span></code>
+                      (gh-511)</li>
+                    <li>Don’t resolve relationships for history objects (gh-479)</li>
+                    <li>Reorganization of docs (gh-510)</li>
+                  </ul>
+                  <p>* NOTE: This change was not backward compatible for users using routers to write
+                    history tables to a separate database from their base tables. This issue is fixed in
+                    2.7.1.</p>
+                </div>
+                <div class="section" id="id11">
+                  <h2>2.6.0 (2018-12-12)<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Add <code class="docutils literal notranslate"><span class="pre">app</span></code> parameter to
+                      the constructor of <code
+                        class="docutils literal notranslate"><span class="pre">HistoricalRecords</span></code> (gh-486)
+                    </li>
+                    <li>Add <code class="docutils literal notranslate"><span class="pre">custom_model_name</span></code>
+                      parameter to the constructor of <code
+                        class="docutils literal notranslate"><span class="pre">HistoricalRecords</span></code> (gh-451)
+                    </li>
+                    <li>Fix header on history pages when custom site_header is used (gh-448)</li>
+                    <li>Modify <code
+                        class="docutils literal notranslate"><span class="pre">pre_create_historical_record</span></code>
+                      to pass <code
+                        class="docutils literal notranslate"><span class="pre">history_instance</span></code> for ease
+                      of customization (gh-421)</li>
+                    <li>Raise warning if <code
+                        class="docutils literal notranslate"><span class="pre">HistoricalRecords(inherit=False)</span></code>
+                      is in an abstract model (gh-341)</li>
+                    <li>Ensure custom arguments for fields are included in historical models’ fields (gh-431)</li>
+                    <li>Add german translations (gh-484)</li>
+                    <li>Add <code class="docutils literal notranslate"><span class="pre">extra_context</span></code>
+                      parameter to history_form_view (gh-467)</li>
+                    <li>Fixed bug that prevented <code
+                        class="docutils literal notranslate"><span class="pre">next_record</span></code> and <code
+                        class="docutils literal notranslate"><span class="pre">prev_record</span></code> to work with
+                      custom manager names (gh-501)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id12">
+                  <h2>2.5.1 (2018-10-19)<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Add <code class="docutils literal notranslate"><span class="pre">'+'</span></code> as the <code
+                        class="docutils literal notranslate"><span class="pre">history_type</span></code> for each
+                      instance in <code
+                        class="docutils literal notranslate"><span class="pre">bulk_history_create</span></code>
+                      (gh-449)</li>
+                    <li>Add support for <code
+                        class="docutils literal notranslate"><span class="pre">history_change_reason</span></code> for
+                      each instance in <code
+                        class="docutils literal notranslate"><span class="pre">bulk_history_create</span></code>
+                      (gh-449)</li>
+                    <li>Add <code
+                        class="docutils literal notranslate"><span class="pre">history_change_reason</span></code> in
+                      the history list view under the <code
+                        class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">reason</span></code>
+                      display name (gh-458)</li>
+                    <li>Fix bug that caused failures when using a custom user model (gh-459)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id13">
+                  <h2>2.5.0 (2018-10-18)<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Add ability to cascade delete historical records when master record is deleted (gh-440)</li>
+                    <li>Added Russian localization (gh-441)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id14">
+                  <h2>2.4.0 (2018-09-20)<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Add pre and post create_historical_record signals (gh-426)</li>
+                    <li>Remove support for <code
+                        class="docutils literal notranslate"><span class="pre">django_mongodb_engine</span></code> when
+                      converting AutoFields (gh-432)</li>
+                    <li>Add support for Django 2.1 (gh-418)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id15">
+                  <h2>2.3.0 (2018-07-19)<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Add ability to diff <code
+                        class="docutils literal notranslate"><span class="pre">HistoricalRecords</span></code> (gh-244)
+                    </li>
+                  </ul>
+                </div>
+                <div class="section" id="id16">
+                  <h2>2.2.0 (2018-07-02)<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Add ability to specify alternative user_model for tracking (gh-371)</li>
+                    <li>Add util function <code
+                        class="docutils literal notranslate"><span class="pre">bulk_create_with_history</span></code> to
+                      allow bulk_create with history saved (gh-412)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id17">
+                  <h2>2.1.1 (2018-06-15)<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Fixed out-of-memory exception when running populate_history management command (gh-408)</li>
+                    <li>Fix TypeError on populate_history if excluded_fields are specified (gh-410)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id18">
+                  <h2>2.1.0 (2018-06-04)<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Add ability to specify custom <code
+                        class="docutils literal notranslate"><span class="pre">history_reason</span></code> field
+                      (gh-379)</li>
+                    <li>Add ability to specify custom <code
+                        class="docutils literal notranslate"><span class="pre">history_id</span></code> field (gh-368)
+                    </li>
+                    <li>Add HistoricalRecord instance properties <code
+                        class="docutils literal notranslate"><span class="pre">prev_record</span></code> and <code
+                        class="docutils literal notranslate"><span class="pre">next_record</span></code> (gh-365)</li>
+                    <li>Can set admin methods as attributes on object history change list template (gh-390)</li>
+                    <li>Fixed compatibility of &gt;= 2.0 versions with old-style middleware (gh-369)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id19">
+                  <h2>2.0 (2018-04-05)<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Added Django 2.0 support (gh-330)</li>
+                    <li>Dropped support for Django&lt;=1.10 (gh-356)</li>
+                    <li>Fix bug where <code
+                        class="docutils literal notranslate"><span class="pre">history_view</span></code> ignored user
+                      permissions (gh-361)</li>
+                    <li>Fixed <code
+                        class="docutils literal notranslate"><span class="pre">HistoryRequestMiddleware</span></code>
+                      which hadn’t been working for Django&gt;1.9 (gh-364)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id20">
+                  <h2>1.9.1 (2018-03-30)<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Use <code class="docutils literal notranslate"><span class="pre">get_queryset</span></code>
+                      rather <code
+                        class="docutils literal notranslate"><span class="pre">than</span> <span class="pre">model.objects</span></code>
+                      in <code class="docutils literal notranslate"><span class="pre">history_view</span></code>.
+                      (gh-303)</li>
+                    <li>Change ugettext calls in models.py to ugettext_lazy</li>
+                    <li>Resolve issue where model references itself (gh-278)</li>
+                    <li>Fix issue with tracking an inherited model (abstract class) (gh-269)</li>
+                    <li>Fix history detail view on django-admin for abstract models (gh-308)</li>
+                    <li>Dropped support for Django&lt;=1.6 and Python 3.3 (gh-292)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id21">
+                  <h2>1.9.0 (2017-06-11)<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Add <code class="docutils literal notranslate"><span class="pre">--batchsize</span></code>
+                      option to the <code
+                        class="docutils literal notranslate"><span class="pre">populate_history</span></code> management
+                      command. (gh-231)</li>
+                    <li>Add ability to show specific attributes in admin history list view. (gh-256)</li>
+                    <li>Add Brazilian Portuguese translation file. (gh-279)</li>
+                    <li>Fix locale file packaging issue. (gh-280)</li>
+                    <li>Add ability to specify reason for history change. (gh-275)</li>
+                    <li>Test against Django 1.11 and Python 3.6. (gh-276)</li>
+                    <li>Add <code class="docutils literal notranslate"><span class="pre">excluded_fields</span></code>
+                      option to exclude fields from history. (gh-274)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id22">
+                  <h2>1.8.2 (2017-01-19)<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Add Polish locale.</li>
+                    <li>Add Django 1.10 support.</li>
+                  </ul>
+                </div>
+                <div class="section" id="id23">
+                  <h2>1.8.1 (2016-03-19)<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Clear the threadlocal request object when processing the response to prevent test interactions.
+                      (gh-213)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id24">
+                  <h2>1.8.0 (2016-02-02)<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>History tracking can be inherited by passing <code
+                        class="docutils literal notranslate"><span class="pre">inherit=True</span></code>. (gh-63)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id25">
+                  <h2>1.7.0 (2015-12-02)<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Add ability to list history in admin when the object instance is deleted. (gh-72)</li>
+                    <li>Add ability to change history through the admin. (Enabled with the <code
+                        class="docutils literal notranslate"><span class="pre">SIMPLE_HISTORY_EDIT</span></code>
+                      setting.)</li>
+                    <li>Add Django 1.9 support.</li>
+                    <li>Support for custom tables names. (gh-196)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id26">
+                  <h2>1.6.3 (2015-07-30)<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Respect <code class="docutils literal notranslate"><span class="pre">to_field</span></code> and
+                      <code class="docutils literal notranslate"><span class="pre">db_column</span></code> parameters
+                      (gh-182)
+                    </li>
+                  </ul>
+                </div>
+                <div class="section" id="id27">
+                  <h2>1.6.2 (2015-07-04)<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Use app loading system and fix deprecation warnings on Django 1.8 (gh-172)</li>
+                    <li>Update Landscape configuration</li>
+                  </ul>
+                </div>
+                <div class="section" id="id28">
+                  <h2>1.6.1 (2015-04-21)<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Fix OneToOneField transformation for historical models (gh-166)</li>
+                    <li>Disable cascading deletes from related models to historical models</li>
+                    <li>Fix restoring historical instances with missing one-to-one relations (gh-162)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id29">
+                  <h2>1.6.0 (2015-04-16)<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Add support for Django 1.8+</li>
+                    <li>Deprecated use of <code
+                        class="docutils literal notranslate"><span class="pre">CustomForeignKeyField</span></code> (to
+                      be removed)</li>
+                    <li>Remove default reverse accessor to <code
+                        class="docutils literal notranslate"><span class="pre">auth.User</span></code> for historical
+                      models (gh-121)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id30">
+                  <h2>1.5.4 (2015-01-03)<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Fix a bug when models have a <code
+                        class="docutils literal notranslate"><span class="pre">ForeignKey</span></code> with <code
+                        class="docutils literal notranslate"><span class="pre">primary_key=True</span></code></li>
+                    <li>Do NOT delete the history elements when a user is deleted.</li>
+                    <li>Add support for <code
+                        class="docutils literal notranslate"><span class="pre">latest</span></code></li>
+                    <li>Allow setting a reason for change. [using option changeReason]</li>
+                  </ul>
+                </div>
+                <div class="section" id="id31">
+                  <h2>1.5.3 (2014-11-18)<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Fix migrations while using <code
+                        class="docutils literal notranslate"><span class="pre">order_with_respsect_to</span></code>
+                      (gh-140)</li>
+                    <li>Fix migrations using south</li>
+                    <li>Allow history accessor class to be overridden in <code
+                        class="docutils literal notranslate"><span class="pre">register()</span></code></li>
+                  </ul>
+                </div>
+                <div class="section" id="id32">
+                  <h2>1.5.2 (2014-10-15)<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Additional fix for migrations (gh-128)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id33">
+                  <h2>1.5.1 (2014-10-13)<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Removed some incompatibilities with non-default admin sites (gh-92)</li>
+                    <li>Fixed error caused by <code
+                        class="docutils literal notranslate"><span class="pre">HistoryRequestMiddleware</span></code>
+                      during anonymous requests (gh-115 fixes gh-114)</li>
+                    <li>Added workaround for clashing related historical accessors on User (gh-121)</li>
+                    <li>Added support for MongoDB AutoField (gh-125)</li>
+                    <li>Fixed CustomForeignKeyField errors with 1.7 migrations (gh-126 fixes gh-124)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id34">
+                  <h2>1.5.0 (2014-08-17)<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Extended availability of the <code
+                        class="docutils literal notranslate"><span class="pre">as_of</span></code> method to models as
+                      well as instances.</li>
+                    <li>Allow <code class="docutils literal notranslate"><span class="pre">history_user</span></code> on
+                      historical objects to be set by middleware.</li>
+                    <li>Fixed error that occurs when a foreign key is designated using just the name of the model.</li>
+                    <li>Drop Django 1.3 support</li>
+                  </ul>
+                </div>
+                <div class="section" id="id35">
+                  <h2>1.4.0 (2014-06-29)<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Fixed error that occurs when models have a foreign key pointing to a one to one field.</li>
+                    <li>Fix bug when model verbose_name uses unicode (gh-76)</li>
+                    <li>Allow non-integer foreign keys</li>
+                    <li>Allow foreign keys referencing the name of the model as a string</li>
+                    <li>Added the ability to specify a custom <code
+                        class="docutils literal notranslate"><span class="pre">history_date</span></code></li>
+                    <li>Note that <code
+                        class="docutils literal notranslate"><span class="pre">simple_history</span></code> should be
+                      added to <code class="docutils literal notranslate"><span class="pre">INSTALLED_APPS</span></code>
+                      (gh-94 fixes gh-69)</li>
+                    <li>Properly handle primary key escaping in admin URLs (gh-96 fixes gh-81)</li>
+                    <li>Add support for new app loading (Django 1.7+)</li>
+                    <li>Allow specifying custom base classes for historical models (gh-98)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id36">
+                  <h2>1.3.0 (2013-05-17)<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Fixed bug when using <code
+                        class="docutils literal notranslate"><span class="pre">django-simple-history</span></code> on
+                      nested models package</li>
+                    <li>Allow history table to be formatted correctly with <code
+                        class="docutils literal notranslate"><span class="pre">django-admin-bootstrap</span></code></li>
+                    <li>Disallow calling <code
+                        class="docutils literal notranslate"><span class="pre">simple_history.register</span></code>
+                      twice on the same model</li>
+                    <li>Added Python 3 support</li>
+                    <li>Added support for custom user model (Django 1.5+)</li>
+                  </ul>
+                </div>
+                <div class="section" id="id37">
+                  <h2>1.2.3 (2013-04-22)<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Fixed packaging bug: added admin template files to PyPI package</li>
+                  </ul>
+                </div>
+                <div class="section" id="id38">
+                  <h2>1.2.1 (2013-04-22)<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h2>
+                  <ul class="simple">
+                    <li>Added tests</li>
+                    <li>Added history view/revert feature in admin interface</li>
+                    <li>Various fixes and improvements</li>
+                  </ul>
+                </div>
+                <div class="section" id="oct-22-2010">
+                  <h2>Oct 22, 2010<a class="headerlink" href="#oct-22-2010" title="Permalink to this headline">¶</a>
+                  </h2>
+                  <ul class="simple">
+                    <li>Merged setup.py from Klaas van Schelven - Thanks!</li>
+                  </ul>
+                </div>
+                <div class="section" id="feb-21-2010">
+                  <h2>Feb 21, 2010<a class="headerlink" href="#feb-21-2010" title="Permalink to this headline">¶</a>
+                  </h2>
+                  <ul class="simple">
+                    <li>Initial project creation, with changes to support ForeignKey relations.</li>
+                  </ul>
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+          <footer>
+
+            <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+
+              <a href="quick_start.html" class="btn btn-neutral float-right" title="Quick Start" accesskey="n"
+                rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+
+
+            </div>
+
+
+            <hr>
+
+            <div role="contentinfo">
+              <p>
+                © Copyright 2013, Corey Bertram
+
+                <span class="commit">
+                  Revision <code>19942779</code>.
+                </span>
+
+
+              </p>
+            </div>
+            Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a
+              href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a
+              href="https://readthedocs.org">Read the Docs</a>.
+
+          </footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <!-- Inserted RTD Footer -->
+
+      <div class="injected">
+
+
+
+
+
+
+        <dl>
+          <dt>Versions</dt>
+
+          <strong>
+            <dd><a href="https://django-simple-history.readthedocs.io/en/latest/">latest</a></dd>
+          </strong>
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/stable/">stable</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/3.0.0/">3.0.0</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.12.0/">2.12.0</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.10.0/">2.10.0</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.9.0/">2.9.0</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.8.0/">2.8.0</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.7.3/">2.7.3</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.7.2/">2.7.2</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.7.1/">2.7.1</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.7.0/">2.7.0</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.6.0/">2.6.0</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.5.1/">2.5.1</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.4.0/">2.4.0</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.3.0/">2.3.0</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.2.0/">2.2.0</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.1.1/">2.1.1</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/2.0/">2.0</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/1.9.1/">1.9.1</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/1.8.2/">1.8.2</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/1.7.0/">1.7.0</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/1.6.3/">1.6.3</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/1.5.4/">1.5.4</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/1.4.0/">1.4.0</a></dd>
+
+
+
+          <dd><a href="https://django-simple-history.readthedocs.io/en/1.3.0/">1.3.0</a></dd>
+
+
+        </dl>
+
+
+
+
+
+        <dl>
+          <dt>Downloads</dt>
+
+          <dd><a href="//django-simple-history.readthedocs.io/_/downloads/en/latest/pdf/">PDF</a></dd>
+
+          <dd><a href="//django-simple-history.readthedocs.io/_/downloads/en/latest/htmlzip/">HTML</a></dd>
+
+          <dd><a href="//django-simple-history.readthedocs.io/_/downloads/en/latest/epub/">Epub</a></dd>
+
+        </dl>
+
+
+
+
+        <dl>
+
+          <!-- These are kept as relative links for internal installs that are http -->
+          <dt>On Read the Docs</dt>
+          <dd>
+            <a href="//readthedocs.org/projects/django-simple-history/">Project Home</a>
+          </dd>
+          <dd>
+            <a href="//readthedocs.org/projects/django-simple-history/builds/">Builds</a>
+          </dd>
+          <dd>
+            <a href="//readthedocs.org/projects/django-simple-history/downloads/">Downloads</a>
+          </dd>
+        </dl>
+
+
+
+
+
+        <dl>
+          <dt>On GitHub</dt>
+          <dd>
+            <a href="https://github.com/jazzband/django-simple-history/blob/master/docs/index.rst">보기</a>
+          </dd>
+
+        </dl>
+
+
+
+
+        <dl>
+          <dt>검색</dt>
+          <dd>
+            <div style="padding: 6px;">
+
+              <form id="flyout-search-form" class="wy-form" target="_blank"
+                action="//readthedocs.org/projects/django-simple-history/search/" method="get">
+                <input type="text" name="q" aria-label="Search docs" placeholder="Search docs">
+              </form>
+            </div>
+          </dd>
+        </dl>
+
+
+
+
+
+        <hr>
+
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    jQuery(function () {
+      SphinxRtdTheme.Navigation.enable(true);
+    });
+  </script>
+
+</body>
+
+</html>
+
+{% endblock content%}

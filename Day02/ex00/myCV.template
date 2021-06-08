@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <title>myCV</title>
+    <meta charset='utf-8'>
+</head>
+
+<body>
+    <h3>{name} {surname}</h3>
+    <p><b>Age: </b>{age}</p>
+    <p><b>Profession: </b>{profession}</p>
+    <p><b>Hobby: </b>{hobby}</p>
+</body>
+
+</html>

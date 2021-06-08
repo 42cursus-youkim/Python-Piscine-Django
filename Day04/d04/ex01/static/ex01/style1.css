@@ -1,0 +1,17 @@
+html, body, a, p {
+    color: rgb(170, 199, 229);
+    font: 20px "Roboto Mono", sans-serif
+}
+
+h1, a:visited{
+    color: blue;
+}
+
+li {
+    display: inline;
+}
+
+iframe {
+    height: 100vh;
+    width: 100vw;
+}

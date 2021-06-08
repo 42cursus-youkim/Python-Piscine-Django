@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% block title %}
+{% load static %}
+<title>WORLDMAP | MOVIEMON</title>
+{% endblock title %} 
+
+{% block content %}
+<div class="worldmap-container">
+  <table class="worldmap-table">
+    {% for y in engine %}
+    <tr>
+      {% for x in y %}
+      <td class="worldmap-td {% if x.content == "@" %}
+        worldmap-player
+        {% endif %}
+        "style="background-color: rgb({{x.r}}, {{x.g}}, {{x.b}})";  text-align:center;>
+        {% if x.content == "movieball" and x.seen == 1 %}
+          0 
+        {% elif x.content == "moviemon" and x.seen == 1 %}
+          !
+        {% elif x.content == "movieradar" and x.seen == 1%}
+          ;
+        {% elif not x.content %}
+           
+        {% elif x.content != "@" %}
+          ?
+        {% endif %}
+      </td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+<div class="worldmap-button-select">select - Moviedex</div>
+<div class="worldmap-button-start">start - Option</div><br>
+<div class="worldmap-message">{{message}}</div> 
+<div class="worldmap-movieball">Movieball ✖ {{movieballs}}</div>
+{% if flush %}
+  <div class="worldmap-flush-block">
+    <div class="worldmap-flush-comment">
+      {% if flush == "battle" %}
+        🅰 Start to catch
+      {% elif flush == "win" %}
+        <p style="margin-top: -2.4vh;">You've catched all {{moviemons}} moviemons and became the glorious <i>Moviemon Master!</i></p>
+        <p>🅰 return to title</p>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,16 @@
+html, body, a {
+    color: rgb(229, 170, 187);
+}
+
+h1, a:visited, a:hover {
+    color: red;
+}
+
+li {
+    display: inline;
+}
+
+iframe {
+    height: 100vh;
+    width: 100vw;
+}

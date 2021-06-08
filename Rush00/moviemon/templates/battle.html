@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block title %}
+<title>BATTLE | MOVIEMON</title>
+{% endblock title %} {% block content %}
+<div class="battle_scene">
+  <div class="battle_movie_name">{{ movie_title }}</div>
+  <div class="battle_movie_strength">LV {{movie_rating}}</div>
+  <img class="battle_poster" src="{{ movie_poster }}"></img>
+  <div class="battle_movie_ball"> ✖ {{pocketball_number}}</div>
+  <div class="battle_user_power"> LV {{user_rating}}</div>
+  <div class="battle_text">{{ user_text }}</div>
+  <div class="battle_user_winning_rate">{{ user_winning_rate }}</div>
+  <div class="battle_text_second_line">{{button_text}}</div>
+</div>
+{% endblock content %}

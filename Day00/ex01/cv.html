@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>CV</title>
+    <style>
+        h1 {
+            color: darkblue;
+            animation: rspin 100s linear infinite;
+        }
+
+        body {
+            color: darkorange;
+            font-family: "Comic Sans MS", "Comic Sans", "Gulim", cursive;
+            font-style: oblique;
+        }
+
+        td {
+            border: 14px solid red;
+        }
+
+        ul {
+            list-style-type: "👍";
+            animation: head 20s linear infinite;
+        }
+
+        #last_case {
+            border: 6px solid #424242;
+        }
+
+        .table {
+            border-collapse: collapse;
+        }
+
+        .bonobono {
+            background-image: url("https://scontent-ssn1-1.xx.fbcdn.net/v/t1.6435-9/91446449_1140257086306647_1550727818013310976_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=174925&_nc_ohc=wKfa9u3QQhgAX_KHoBy&_nc_ht=scontent-ssn1-1.xx&oh=1df55ac1ef66a3e842e894a6e1294157&oe=60D0EA23");
+            background-repeat: repeat;
+            background-size: 200px;
+            border: 10px solid #123456;
+            animation: spin 3000s linear infinite;
+        }
+
+        .rainbow-bg {
+            animation: colorchange 4s linear infinite;
+        }
+
+        .rainbow-txt {
+            background-clip: text;
+            -webkit-background-clip: text;
+            font-weight: bold;
+            font-size: 40px;
+            animation: colorchange 3s linear infinite;
+            animation: head 6s linear infinite;
+        }
+
+        @keyframes colorchange {
+
+            0%,
+            100% {
+                background-image: linear-gradient(0deg, violet, indigo, blue, green, yellow, orange, red);
+            }
+
+            25% {
+                background-image: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
+            }
+
+            50% {
+                background-image: linear-gradient(180deg, violet, indigo, blue, green, yellow, orange, red);
+            }
+
+            75% {
+                background-image: linear-gradient(270deg, violet, indigo, blue, green, yellow, orange, red);
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes rspin {
+            from {
+                transform: rotate(360deg)
+            }
+
+            to {
+                transform: rotate(0deg)
+            }
+        }
+
+        @keyframes head {
+            0% {
+                font-size: 100%;
+                opacity: 1;
+            }
+
+            25% {
+                font-size: 170%;
+                opacity: 0;
+            }
+
+            50% {
+                font-size: 100%;
+                opacity: 1;
+            }
+
+            65% {
+                font-size: 170%;
+                opacity: 0;
+            }
+
+            90% {
+                font-size: 140%;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="bonobono">
+    <h1 class="rainbow-txt">
+        YOUKIM's CV
+    </h1>
+    <h2 class="rainbow-bg">
+        저에 대하여
+    </h2>
+    <ul>
+        <li>이름: you</li>
+        <li>성씨: kim</li>
+    </ul>
+    <h1 class="rainbow">향후 목표</h1>
+    <ol>
+        <li>웹 디자이너 되기</li>
+        <li>프론트엔드 개발자</li>
+    </ol>
+    <table class="table">
+        <tr>
+            <th>테이블</th>
+            <th>만들기</th>
+        </tr>
+        <tr>
+            <td>
+                <p>피신:</p>
+            </td>
+            <td>
+                <p>파이썬 & Django</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>기술:</p>
+            </td>
+            <td id=last_case>
+                <p>libft</p>
+            </td>
+        </tr>
+    </table>
+    <table class="table">
+        <tr>
+            <th class="rainbow">앞으로의 진로</th>
+        </tr>
+        <tr>
+            <td>42서울에서 웹개발 공부</td>
+        </tr>
+        <tr>
+            <td style="border:6px solid#424242">프론트엔드 계열 분야에서 일하고 싶습니다</td>
+        </tr>
+    </table>
+</body>
+
+</html>

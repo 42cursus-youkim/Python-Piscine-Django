@@ -1,0 +1,5 @@
+name = "You"
+surname = "Kim"
+age = "20"
+profession = "student"
+hobby = "sleeping"

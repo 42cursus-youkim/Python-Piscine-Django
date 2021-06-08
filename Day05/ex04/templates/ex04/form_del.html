@@ -1,0 +1,15 @@
+{% extends 'ex04/display.html' %}
+
+{% block content %}
+	<form method="POST">
+		{% csrf_token %}
+		<select name="movies">
+			{% for line in tabledata %}
+			<option name="title" value=="{{line.1}}"> {{line.0}} </option>
+			{% endfor %}
+		</select>
+		<input type="submit" value="Submit">
+	</form>
+	<br>
+{% endblock content %}
+

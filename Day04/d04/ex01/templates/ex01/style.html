@@ -1,0 +1,10 @@
+{% extends 'ex01/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>{{title}}</title>
+{% endblock title %}
+
+{% block style %}
+<link  rel="stylesheet" href={% static "ex01/style1.css" %}></link>
+{% endblock style %}

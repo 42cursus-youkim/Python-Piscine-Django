@@ -1,0 +1,26 @@
+{% block nav %}
+
+<nav>
+
+<span class='flexbox'>
+    <span>
+        {% include "base/messages.html" %}
+    </span>
+    <span>
+        {% for link in links %}
+            {% if link %}
+                <a href={{link}}>{{link}}</a>
+            {% else %}
+                <a href="/ex">Index</a>
+            {% endif %}
+        {% endfor %}
+    </span>
+</span>
+    
+    <hr>
+    <h4 class="tal">
+        Hello, {{username}}.
+    </h4>
+</nav>
+
+{% endblock nav %}

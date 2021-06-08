@@ -1,0 +1,586 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block title %}
+    <title>MOVIEMON</title>
+    {% endblock title %}
+    <script type="text/javascript" src="{% static 'js/button_events.js' %}"></script>
+    <style>
+      @font-face {
+        font-family: "PKMN RBYGSC";
+        font-style: normal;
+        src: url("{% static 'fonts/PKMN_RBYGSC.ttf' %}") format("truetype");
+      }
+
+      .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60vh;
+        height: calc(1.624 * 60vh);
+        font-family: "PKMN RBYGSC";
+        background-image: url("{% static 'images/gameboy.png' %}");
+        background-size: cover;
+        position: relative;
+      }
+
+      .content {
+        width: 50vh;
+        height: calc(0.75 * 50vh);
+        background-color: transparent;
+        position: absolute;
+        border-radius: 25px;
+        top: 8.75vh;
+        left: 5vh;
+      }
+
+      /* WORLDMAP SCENE */
+
+      .worldmap-container {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        background-color: white;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      .worldmap-table {
+        margin-left: auto;
+        margin-right: auto;
+        table-layout: fixed;
+        width: 26vh;
+      }
+
+      .worldmap-td {
+        text-align: center;
+
+        width: 2.8vh;
+        height: 2.8vh;
+      }
+
+      .worldmap-player {
+        background-image: url('{% static "images/player.png" %}');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .worldmap-movieball {
+        margin-top: -38.4vh;
+        /* margin-left: 60vw; */
+        /* margin-left: 35vh; */
+        margin-right: 0.6vw;
+        height: fit-content;
+        width: fit-content;
+        float: right;
+        display: flex;
+      }
+
+      .worldmap-message {
+        margin-top: -38.4vh;
+        margin-left: 0.6vw;
+        /* margin-left: 35vh; */
+        /* margin-right: 10px; */
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+        float: left;
+        height: fit-content;
+        width: fit-content;
+      }
+
+      .worldmap-button-select {
+        display: absolute;
+        margin-top: -2.7vh;
+        margin-left: 80px;
+        font-size: 1.5vh;
+        float: left;
+        height: fit-content;
+        color: #383838;
+        text-shadow: 1px 1px 1px #383838;
+      }
+
+      .worldmap-button-start {
+        display: absolute;
+        margin-top: -2.7vh;
+        margin-right: 80px;
+        font-size: 1.5vh;
+        float: right;
+        height: fit-content;
+        color: #383838;
+        text-shadow: 1px 1px 1px #383838;
+      }
+
+      .worldmap-flush-block {
+        width: 100%;
+        height: 30%;
+        bottom: 3vh;
+        background-color: white;
+        background-image: url("{% static 'images/comment_block.png' %}");
+        position: absolute;
+        background-size: cover;
+        box-shadow: inset 3px 3px 5px black;
+      }
+
+      .worldmap-flush-comment {
+        font-size: 1.5vh;
+        position: absolute;
+        top: 4.7vh;
+        left: 5vw;
+      }
+
+      #btn-up {
+        background-color: rgba(0, 0, 0, 0);
+        position: absolute;
+        width: 5vh;
+        height: 6.5vh;
+        top: 58.5vh;
+        left: 10.3vh;
+        border-radius: 10px;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+      }
+
+      #btn-down {
+        background-color: rgba(0, 0, 0, 0);
+        position: absolute;
+        width: 5vh;
+        height: 6.5vh;
+        top: 67vh;
+        left: 10.3vh;
+        border-radius: 10px;
+        border-top-right-radius: 50px;
+        border-top-left-radius: 50px;
+      }
+
+      #btn-left {
+        background-color: rgba(0, 0, 0, 0);
+        position: absolute;
+        width: 6.5vh;
+        height: 5vh;
+        top: 63.5vh;
+        left: 5.5vh;
+        border-radius: 10px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+      }
+
+      #btn-right {
+        background-color: rgba(0, 0, 0, 0);
+        position: absolute;
+        width: 6.5vh;
+        height: 5vh;
+        top: 63.5vh;
+        left: 13.5vh;
+        border-radius: 10px;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+      }
+
+      #btn-a {
+        background-color: rgba(0, 0, 0, 0);
+        position: absolute;
+        width: 7vh;
+        height: 7vh;
+        top: 64vh;
+        left: 37.7vh;
+        border-radius: 50vh;
+        box-shadow: inset 1px 1px 10px 1px rgb(141, 56, 101),
+          1px 1px 10px 1px rgb(42, 42, 42);
+      }
+
+      #btn-a:hover {
+        box-shadow: inset 1px 1px 10px 1px black,
+          1px 1px 10px 1px rgb(42, 42, 42);
+      }
+
+      #btn-b {
+        background-color: rgba(0, 0, 0, 0);
+        position: absolute;
+        width: 7vh;
+        height: 7vh;
+        top: 59.6vh;
+        left: 47.1vh;
+        border-radius: 50vh;
+        box-shadow: inset 1px 1px 10px 1px rgb(141, 56, 101),
+          1px 1px 10px 1px rgb(42, 42, 42);
+      }
+
+      #btn-b:hover {
+        box-shadow: inset 1px 1px 10px 1px black,
+          1px 1px 10px 1px rgb(42, 42, 42);
+      }
+
+      #btn-select {
+        background-color: rgba(0, 0, 0, 0);
+        position: absolute;
+        transform: rotate(155deg);
+        width: 8vh;
+        height: 1.5vh;
+        bottom: 17vh;
+        left: 18vh;
+        border-radius: 50vh;
+      }
+
+      #btn-start {
+        background-color: rgba(0, 0, 0, 0);
+        position: absolute;
+        transform: rotate(155deg);
+        width: 8vh;
+        height: 1.5vh;
+        bottom: 17vh;
+        left: 28vh;
+        border-radius: 50vh;
+      }
+
+      /* BATTLE SCENE */
+
+      .battle_scene {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        background-image: url("{% static 'images/battle_scene.png' %}");
+        background-size: contain;
+        position: relative;
+        box-shadow: inset 3px 3px 5px black;
+      }
+
+      .battle_poster {
+        position: absolute;
+        width: 10vh;
+        height: 14.8vh;
+        right: 5vh;
+        top: 1vh;
+        background-size: contain;
+        background-repeat: no-repeat;
+        box-shadow: 5px 5px 5px #424242;
+      }
+
+      .battle_movie_strength {
+        position: absolute;
+        font-size: 1vh;
+        left: 21vh;
+        top: 7.5vh;
+        color: #383838;
+        text-shadow: 1px 1px 1px #383838;
+      }
+
+      .battle_movie_name {
+        position: absolute;
+        font-size: 1.5vh;
+        left: 3.8vh;
+        /* top: 3.7vh; */
+        word-wrap: break-word;
+        width: 320px;
+        bottom: 32vh;
+        color: #383838;
+        text-shadow: 1px 1px 1px #383838;
+      }
+
+      .battle_text {
+        position: absolute;
+        font-size: 1.9vh;
+        left: 3vh;
+        top: 25vh;
+        word-wrap: break-word;
+        width: 620px;
+        color: #383838;
+        text-shadow: 1px 1px 1px #383838;
+      }
+
+      .battle_text_second_line {
+        position: absolute;
+        font-size: 1.5vh;
+        right: 3.5vh;
+        top: 31.3vh;
+        color: #383838;
+        text-shadow: 1px 1px 1px #383838;
+      }
+
+      .battle_movie_ball {
+        position: absolute;
+        font-size: 1.5vh;
+        left: 31vh;
+        top: 19.6vh;
+        color: #383838;
+        text-shadow: 1px 1px 1px #383838;
+      }
+
+      .battle_user_power {
+        position: absolute;
+        font-size: 1vh;
+        right: 6vh;
+        top: 20vh;
+        color: #383838;
+        text-shadow: 1px 1px 1px #383838;
+      }
+
+      .battle_user_winning_rate {
+        position: absolute;
+        font-size: 1vh;
+        right: 7.3vh;
+        top: 16.5vh;
+        color: #383838;
+        text-shadow: 1px 1px 1px #383838;
+      }
+
+      /* TITLE */
+      .title-container {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        background-color: white;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      .title-header {
+        font-size: 5vh;
+        width: fit-content;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom: solid #424242 1vh;
+      }
+
+      .title-button {
+        margin: 0.5vh !important;
+        padding: 0.5vh !important;
+        /* box-sizing: border-box;
+        border: solid #545454 0.25vh; */
+        text-align: center;
+        font-size: 3vh;
+      }
+
+      /* MOVIEDEX */
+      .moviedex-container {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        background-color: white;
+        color: black;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        box-shadow: inset 3px 3px 5px black;
+      }
+
+      .moviedex-card-container {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+
+      .moviedex-card {
+        width: 30%;
+        height: 100%;
+        margin-left: 2.5%;
+        margin-top: auto;
+        margin-bottom: auto;
+        object-fit: contain;
+      }
+
+      .moviedex-blur {
+        background-color: rgba(0, 0, 0, 0.125);
+        box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.5);
+        filter: blur(3px);
+      }
+
+      .moviedex-button-container {
+        width: 100%;
+        height: 20%;
+        border-radius: 25px;
+        background-color: white;
+      }
+
+      .moviedex-button-a {
+        /* display: relative; */
+        /* box-sizing: border-box; */
+        /* border: solid #545454 0.25vh; */
+        margin-top: -2.7vh;
+        margin-left: 2vw;
+        font-size: 1vh;
+        float: left;
+        height: fit-content;
+        color: #383838;
+        text-shadow: 1px 1px 1px #383838;
+      }
+
+      .moviedex-button-b {
+        /* display: absolute; */
+        /* box-sizing: border-box; */
+        /* border: solid #545454 0.25vh; */
+        margin-top: -2.7vh;
+        margin-right: 2vw;
+        font-size: 1vh;
+        float: right;
+        height: fit-content;
+        color: #383838;
+        text-shadow: 1px 1px 1px #383838;
+      }
+
+      .moviedex-ative {
+        transform: scale(1.2);
+      }
+
+      /* moviedex detail */
+      .moviedex-detail-container {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        background-color: white;
+        color: black;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .moviedex-detail-image {
+        width: 45%;
+        height: 90%;
+        object-fit: contain;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+      .moviedex-detail-info {
+        width: 50%;
+        height: 100%;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+      .moviedex-detail-button {
+        margin: 0.25vh !important;
+        padding: 0.5vh !important;
+        font-size: 1vh;
+        position: absolute;
+        bottom: -0.5vh;
+        right: 2vw;
+        text-shadow: 1px 1px 1px #383838;
+      }
+
+      /* option detail */
+      .option_scene {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        background-color: white;
+        /* background-image: url("{% static 'images/comment_block.png' %}"); */
+        /* background-size: contain; */
+        position: relative;
+        box-shadow: inset 3px 3px 5px black;
+      }
+
+      .option-comment-block {
+        width: 100%;
+        height: 30%;
+        bottom: 3vh;
+        background-color: white;
+        background-image: url("{% static 'images/comment_block.png' %}");
+        position: absolute;
+        background-size: cover;
+        box-shadow: inset 3px 3px 5px black;
+      }
+
+      .option-comment {
+        font-size: 1.5vh;
+        position: absolute;
+        top: 3vh;
+        left: 5vw;
+      }
+
+      /* save detail */
+      .save_scene {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        background-color: white;
+        /* background-image: url("{% static 'images/comment_block.png' %}"); */
+        /* background-size: contain; */
+        position: relative;
+        box-shadow: inset 3px 3px 5px black;
+        overflow: hidden;
+      }
+
+      .save-comment-block {
+        width: 100%;
+        height: 93%;
+        top: 1.5vh;
+        background-color: white;
+        background-image: url("{% static 'images/comment_block.png' %}");
+        position: absolute;
+        background-size: contain;
+        box-shadow: inset 3px 3px 5px black;
+      }
+
+      .save-comment-a {
+        font-size: 3vh;
+        position: absolute;
+        top: 4vh;
+        left: 4vw;
+      }
+
+      .save-comment-b {
+        font-size: 3vh;
+        position: absolute;
+        top: 15vh;
+        left: 4vw;
+      }
+
+      .save-comment-c {
+        font-size: 3vh;
+        position: absolute;
+        top: 27vh;
+        left: 4vw;
+      }
+
+      .save-button-a {
+        display: absolute;
+        margin-top: 34vh;
+        margin-left: 10vh;
+        font-size: 1.5vh;
+        float: left;
+        height: fit-content;
+        color: #383838;
+        text-shadow: 1px 1px 1px #383838;
+      }
+
+      .save-button-b {
+        display: absolute;
+        margin-top: 34vh;
+        margin-right: 10vh;
+        font-size: 1.5vh;
+        float: right;
+        height: fit-content;
+        color: #383838;
+        text-shadow: 1px 1px 1px #383838;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="content">{% block content %}{% endblock content %}</div>
+      <a href="{{ request.path }}?key=up" id="btn-up"></a>
+      <a href="{{ request.path }}?key=left" id="btn-left"></a>
+      <a href="{{ request.path }}?key=right" id="btn-right"></a>
+      <a href="{{ request.path }}?key=down" id="btn-down"></a>
+      <a href="{{ request.path }}?key=a" id="btn-a"></a>
+      <a href="{{ request.path }}?key=b" id="btn-b"></a>
+      <a href="{{ request.path }}?key=select" id="btn-select"></a>
+      <a href="{{ request.path }}?key=start" id="btn-start"></a>
+    </div>
+  </body>
+
+</html>

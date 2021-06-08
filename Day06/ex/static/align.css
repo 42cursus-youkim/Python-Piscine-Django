@@ -1,0 +1,28 @@
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.al {
+    margin-right: auto;
+}
+
+.ar {
+    margin-left: auto;
+}
+.tal {
+    text-align: left;
+}
+
+.tar {
+    text-align: right;
+}

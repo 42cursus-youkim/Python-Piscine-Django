@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>Day07 | {{pagename}}</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'bootstrap.min.css' %}"
+    />
+  </head>
+
+  <body>
+    {% include 'base/nav.html' %}
+    <div>{% block content %}{% endblock content %}</div>
+  </body>
+</html>

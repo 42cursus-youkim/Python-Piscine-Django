@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+        body {
+            font-family: "Roboto", sans-serif;
+            font-weight: lighter;
+        }
+
+        th {
+            font-size: 110%;
+            font-weight: bold;
+        }
+
+        table,
+        td,
+        th {
+            border: 2px solid rgb(176, 168, 140);
+            padding: 10px;
+            border-collapse: collapse;
+        }
+
+        .num {
+            text-align: center;
+        }
+    </style>
+
+    <body>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Episode_nb</th>
+                <th>Opening_crawl</th>
+                <th>Director</th>
+                <th>Producer</th>
+                <th>Release_date</th>
+            </tr>
+            {% for line in tabledata %}
+            <tr>
+                {% for item in line %}
+                    {% if forloop.counter == 2 %}<td class="num">
+                    {% else %}<td>{% endif %}
+                    {{item}}
+                    </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+
+</html>

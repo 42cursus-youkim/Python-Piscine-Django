@@ -1,0 +1,12 @@
+{% block nav %} {% comment %}
+<span class="flexbox"></span>
+{% endcomment %}
+<nav class="navbar navbar-default">
+  {% include "base/messages.html" %} {% for name, item in links.items %}
+  <a class="nav-link active" href="{% url name %}">{{name}}</a>
+  {% endfor %}
+
+  <p>Hello, {{username}}.</p>
+</nav>
+
+{% endblock nav %}

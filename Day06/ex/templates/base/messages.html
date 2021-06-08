@@ -1,0 +1,7 @@
+{% if messages %}
+
+{% for message in messages %}
+<p class="nomargin message_default message_{{message.tags}}">{{message}}</p>
+{% endfor %}
+
+{% endif %}

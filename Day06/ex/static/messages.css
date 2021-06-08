@@ -1,0 +1,19 @@
+.message_default {
+    font-style: italic;
+}
+
+.message_debug {
+    background-color: lightblue;
+}
+.message_info {
+    background-color: rgb(223, 230, 232);
+}
+.message_success {
+    background-color: lightgreen;
+}
+.message_warning {
+    background-color: lightyellow;
+}
+.message_error {
+    background-color: lightcoral;
+}
